@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    html {
+        text-align: center;
+        background-color: pink;
+        color: black;
+        font-size: 15pt;
+        padding: 100px;
+        overflow: hidden;
+    }
+
+    button {
+        background-color: rgba(244, 147, 56, 0.366);
+        border-radius: 8px;
+        block-size: 70px;
+        inline-size: 300px;
+        font-size: 16px;
+        box-shadow: 8px 2px 5px 2px grey;
+    }
+
+    button:hover {
+        background-color: rgb(197, 240, 245);
+        cursor: pointer; 
+    }
+
+    p > a {
+        font-size: 10pt; 
+        text-decoration: none; 
+        outline: none;
+    }
+
+    p > a:hover {
+        text-decoration: underline;
+    }
+
+</style>
+
+<body>
+    <div style="text-align: center; font-weight:bold; font-size: 50px; ">CONVERTISSEUR</div><br>
+    <div id="test"></div><br>
+    <button onclick="Function2()">Je veux afficher l'heure sexagésimale</a></button><br><br>
+    <div id="test2"></div>
+
+    <p><a href="https://fr.wikipedia.org/wiki/Horloge" target="_blank" alt="c'est quoi sexagésimale???">c'est quoi l'heure sexagésimale ? &#128548;</a></p>
+
+    <script>
+        let minute = prompt('Convertisseur de minutes en heures  —  saisi ta valeur en minute (chiffres uniquement):');
+        let factor = minute*0.016667;
+        let hour = factor;  
+        document.getElementById("test").innerHTML = `Résultat : ${minute} minutes équivaut à ${hour} heures décimale`;
+
+        function Function2() {
+        let decimal = prompt("Saisi un point (.) puis les deux premiers chiffres décimaux (après la virgule) du premier résultat affiché");
+        let result = decimal*60;
+        document.getElementById("test2").innerHTML = `Résultat: ${minute} minutes équivaut à ${hour} heures et ${result} minutes sexagésimale`;
+        document.getElementById("test2").style.fontWeight = "bold";
+        document.getElementById("test2").style.fontSize = "20pt";
+        }
+    </script>
+    
+
+</body>
+</html>
