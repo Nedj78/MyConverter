@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
+    <title>Convertisseur Heures-Minutes</title>
+  </head>
+  <body>
 
+<style>
     html {
         text-align: center;
-        background-color: pink;
+        background-color: rgba(255, 192, 203, 0.683);
         color: black;
         font-size: 15pt;
-        padding: 100px;
+        padding: 80px;
         overflow: hidden;
     }
 
     button {
         background-color: rgba(244, 147, 56, 0.366);
         border-radius: 8px;
-        block-size: 70px;
-        inline-size: 300px;
+        block-size: 40px;
+        inline-size: 100px;
         font-size: 16px;
         box-shadow: 8px 2px 5px 2px grey;
     }
@@ -30,42 +30,56 @@
         background-color: rgb(197, 240, 245);
         cursor: pointer; 
     }
-
-    p > a {
-        font-size: 10pt; 
-        text-decoration: none; 
-        outline: none;
-    }
-
-    p > a:hover {
-        text-decoration: underline;
-    }
-
 </style>
 
-<body>
-    <div style="text-align: center; font-weight:bold; font-size: 50px; ">CONVERTISSEUR</div><br>
-    <div id="test"></div><br>
-    <button onclick="Function2()">Je veux afficher l'heure sexagésimale</a></button><br><br>
-    <div id="test2"></div>
+    <h1>Convertisseur Heures-Minutes</h1>
+    <label for="hours">Heures:</label>
+    <input type="number" id="hours1" min="0">
+    <label for="minutes">Minutes:</label>
+    <input type="number" id="minutes1" min="0" max="59">
+    <button onclick="convert1()">Convertir</button>
+    <p id="result1"></p>
 
-    <p><a href="https://fr.wikipedia.org/wiki/Horloge" target="_blank" alt="c'est quoi sexagésimale???">c'est quoi l'heure sexagésimale ? &#128548;</a></p>
+    <h1>Convertisseur Minutes-Heures</h1>
+    <label for="minutes2">Minutes:</label>
+    <input type="number" id="minutes2" min="0">
+    <button onclick="convert2()">Convertir</button>
+    <p id="result2"></p>
 
     <script>
-        let minute = prompt('Convertisseur de minutes en heures  —  saisi ta valeur en minute (chiffres uniquement):');
-        let factor = minute*0.016667;
-        let hour = factor;  
-        document.getElementById("test").innerHTML = `Résultat : ${minute} minutes équivaut à ${hour} heures décimale`;
+      function convert1() {
+        const hours1 = Number(document.getElementById("hours1").value);
+        const minutes1 = Number(document.getElementById("minutes1").value);
+        const totalMinutes = hours1 * 60 + minutes1;
+        document.getElementById("result1").textContent = `${hours1} heures et ${minutes1} minutes équivaut à ${totalMinutes} minutes.`;
+      }
+    </script>
 
-        function Function2() {
-        let decimal = prompt("Saisi un point (.) puis les deux premiers chiffres décimaux (après la virgule) du premier résultat affiché");
-        let result = decimal*60;
-        document.getElementById("test2").innerHTML = `Résultat: ${minute} minutes équivaut à ${hour} heures et ${result} minutes sexagésimale`;
-        document.getElementById("test2").style.fontWeight = "bold";
-        document.getElementById("test2").style.fontSize = "20pt";
+    <!-- Ce code crée une page web qui permet aux utilisateurs de saisir le nombre d'heures et de minutes, 
+    puis de cliquer sur un bouton pour convertir ces valeurs en minutes. 
+    Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
+    Le code utilise la méthode Number() pour convertir les chaînes de caractères des entrées en nombres, 
+    puis calcule le total des minutes en multipliant le nombre d'heures par 60 et en ajoutant les minutes restantes. 
+    Enfin, le résultat est affiché sur la page en utilisant la propriété textContent de l'élément cible.      
+    -->
+
+    <script>
+        function convert2() {
+          const minutes2 = Number(document.getElementById("minutes2").value);
+          const hours2 = Math.floor(minutes2 / 60);
+          const remainingMinutes = minutes2 % 60;
+          document.getElementById("result2").textContent = `${minutes2} minutes équivaut à ${hours2} heures et ${remainingMinutes} minutes.`;
         }
     </script>
-    
 
-</body>
+    <!-- Ce code crée une page web qui permet aux utilisateurs de saisir le nombre de minutes, 
+    puis de cliquer sur un bouton pour convertir cette valeur en heures et minutes. 
+    Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
+    Le code utilise la méthode Number() pour convertir la chaîne de caractères de l'entrée en un nombre, 
+    puis divise ce nombre par 60 pour obtenir le nombre d'heures entières, et utilise l'opérateur modulo (%) 
+    pour trouver les minutes restantes. Enfin, le résultat est affiché sur la page en utilisant la propriété 
+    textContent de l'élément cible.
+    -->
+
+  </body>
 </html>
