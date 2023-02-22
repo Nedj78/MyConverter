@@ -14,10 +14,10 @@
         color: black;
         font-size: 15pt;
         padding: 80px;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
-    button {
+    .button {
         background-color: rgba(244, 147, 56, 0.366);
         border-radius: 8px;
         block-size: 40px;
@@ -26,10 +26,89 @@
         box-shadow: 8px 2px 5px 2px grey;
     }
 
-    button:hover {
+    .button:hover {
         background-color: rgb(197, 240, 245);
         cursor: pointer; 
     }
+
+    .calculator {
+      background-color: #444;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin: 20px auto;
+      max-width: 400px;
+      padding: 10px;
+      text-align: right;
+    }
+
+    .display {
+      background-color: #666;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 36px;
+      margin-bottom: 10px;
+      padding: 10px;
+      text-align: right;
+    }
+
+    .button-row {
+      display: flex;
+    }
+
+    .buttoncalculator {
+      background-color: #ccc;
+      border: none;
+      border-radius: 5px;
+      color: #222;
+      cursor: pointer;
+      font-size: 24px;
+      flex-grow: 1;
+      margin: 5px;
+      padding: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .buttoncalculator:hover {
+      background-color: #eee;
+    }
+
+    .buttoncalculator:active {
+      background-color: #aaa;
+    }
+
+    .zero {
+      flex-basis: 50%;
+    }
+
+    .operator {
+      background-color: #FF8C00;
+      color: #fff;
+    }
+
+    .scratch-pad {
+      background-color: #444;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      margin: 50px auto;
+      max-width: 300px;
+      min-height: 100px;
+      padding: 30px;
+    }
+
+    .scratch-pad h2 {
+      font-size: 16px;
+      margin: 0;
+      float: left;
+      text-decoration: underline;
+    }
+
+    .scratch-pad p {
+      font-size: 14px;
+      margin: 15px 0 0 0;
+      float: left;
+    }
+
 </style>
 
     <h1>Convertisseur Heures-Minutes</h1>
@@ -37,14 +116,50 @@
     <input type="number" id="hours1" min="0">
     <label for="minutes">Minutes:</label>
     <input type="number" id="minutes1" min="0" max="59">
-    <button onclick="convert1()">Convertir</button>
+    <button class="button" onclick="convert1()">Convertir</button>
     <p id="result1"></p>
 
     <h1>Convertisseur Minutes-Heures</h1>
     <label for="minutes2">Minutes:</label>
     <input type="number" id="minutes2" min="0">
-    <button onclick="convert2()">Convertir</button>
+    <button class="button" onclick="convert2()">Convertir</button>
     <p id="result2"></p>
+
+    <h1>Calculatrice</h1>
+    <div class="calculator">
+      <div class="display"></div>
+      <div class="button-row">
+        <button class="buttoncalculator" onclick="clearDisplay()">C</button>
+        <button class="buttoncalculator" onclick="backspace()" style="font-weight: bold;">⌦</button>
+        <button class="buttoncalculator" onclick="appendToDisplay('(')">(</button>
+        <button class="buttoncalculator" onclick="appendToDisplay(')')">)</button>
+        <button class="buttoncalculator operator" onclick="appendToDisplay('/')">&divide;</button>
+        <button class="buttoncalculator operator" onclick="appendToDisplay('*')">&times;</button>
+      </div>
+      <div class="button-row">
+        <button class="buttoncalculator" onclick="appendToDisplay('7')">7</button>
+        <button class="buttoncalculator" onclick="appendToDisplay('8')">8</button>
+        <button class="buttoncalculator" onclick="appendToDisplay('9')">9</button>
+        <button class="buttoncalculator operator" onclick="appendToDisplay('-')">&minus;</button>
+      </div>
+      <div class="button-row">
+        <button class="buttoncalculator" onclick="appendToDisplay('4')">4</button>
+        <button class="buttoncalculator" onclick="appendToDisplay('5')">5</button>
+        <button class="buttoncalculator" onclick="appendToDisplay('6')">6</button>
+        <button class="buttoncalculator operator" onclick="appendToDisplay('+')">+</button>
+      </div>
+      <div class="button-row">
+        <button class="buttoncalculator" onclick="appendToDisplay('1')">1</button>
+        <button class="buttoncalculator" onclick="appendToDisplay('2')">2</button>
+        <button class="buttoncalculator" onclick="appendToDisplay('3')">3</button>
+        <button class="buttoncalculator operator" onclick="calculate()">=</button>
+      </div>
+      <div class="button-row">
+        <button class="buttoncalculator zero" onclick="appendToDisplay('0')">0</button>
+        <button class="buttoncalculator" onclick="appendToDisplay('.')">.</button>
+      </div>
+      <div class="scratch-pad"></div>
+    </div>
 
     <script>
       function convert1() {
@@ -80,6 +195,76 @@
     pour trouver les minutes restantes. Enfin, le résultat est affiché sur la page en utilisant la propriété 
     textContent de l'élément cible.
     -->
+
+<script>
+  let display = document.querySelector('.display');
+    let scratchPad = document.querySelector('.scratch-pad');
+    let scratchPadText = [];
+    let lastResult = null;
+
+    function appendToDisplay(value) {
+      if (lastResult !== null) {
+        display.innerHTML = '';
+        lastResult = null;
+      }
+      display.innerHTML += value;
+      updateScratchPad();
+    }
+
+    function clearDisplay() {
+      display.innerHTML = '';
+      scratchPadText = [];
+      updateScratchPad();
+    }
+
+    function backspace() {
+      display.innerHTML = display.innerHTML.slice(0, -1);
+      updateScratchPad();
+    }
+
+    function percentage() {
+      let expression = display.innerHTML;
+      let result = eval(expression) / 100;
+      display.innerHTML = result;
+      scratchPadText.push(expression + '% = ' + result); // Ajouter le calcul et le résultat dans le tableau
+      updateScratchPad();
+
+    }
+
+    function calculate() {
+      let expression = display.innerHTML;
+      let result = eval(expression);
+      display.innerHTML = result;
+      if (lastResult === null) {
+        scratchPadText.push(expression + ' = ' + result);
+      } else {
+        scratchPadText.push(lastResult + ' ' + expression + ' = ' + result);
+      }
+      lastResult = result;
+      updateScratchPad();
+    }
+
+    function updateScratchPad() {
+      let scratchPadHTML = '<h2>Table de brouillon</h2>';
+      scratchPadText.forEach(function(item) {
+        scratchPadHTML += '<br>' + '<p>' + item + '</p>' + '<br>';
+      });
+      scratchPad.innerHTML = scratchPadHTML;
+    }
+
+    //scratchPadText est maintenant un tableau qui stocke les opérations de calcul et les résultats séparément. 
+    //Lorsque l'utilisateur saisit une opération de calcul, nous ajoutons cette opération au dernier élément du tableau. 
+    //Lorsque l'utilisateur clique sur le bouton "=", nous ajoutons l'opération et le résultat dans un nouvel élément du tableau.
+    //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat) 
+    //dans un paragraphe HTML séparé. Ainsi, chaque opération de calcul et chaque résultat apparaissent sur une ligne séparée dans la table de brouillon.
+  
+    </script>
+    
+    
+
+    <script type='text/javascript'>
+      document.addEventListener('contextmenu', event => event.preventDefault()); //clic droit impossible
+      </script>
 
   </body>
 </html>
