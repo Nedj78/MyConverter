@@ -50,7 +50,7 @@
       padding: 10px;
       text-align: right;
       height: 30px;
-      padding: 0 0 10px 0;
+      padding: 10px;
       overflow-wrap: break-word;
       min-height: 42px;
       height: auto; /* hauteur automatique */
@@ -97,9 +97,12 @@
       color: #fff;
       margin: 50px auto;
       max-width: 300px;
+      max-height: 800px;
       min-height: 100px;
       padding: 30px;
       word-wrap: break-word;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
     .scratch-pad h2 {
@@ -113,8 +116,6 @@
       font-size: 14px;
       margin: 15px 0 0 0;
       float: left;
-      text-align: left;
-      max-width: 300px;
     }
 
 </style>
@@ -124,7 +125,7 @@
     <input type="number" id="hours1" min="0">
     <label for="minutes">Minutes:</label>
     <input type="number" id="minutes1" min="0" max="59">
-    <button class="button" onclick="convert1()">Convertir</button>
+    <button class="button" id="convertBtn" onclick="convert1()">Convertir</button>
     <p id="result1"></p>
 
     <h1>Convertisseur Minutes-Heures</h1>
@@ -193,16 +194,17 @@
           const remainingMinutes = minutes2 % 60;
           document.getElementById("result2").textContent = `${minutes2} minutes équivaut à ${hours2} heures et ${remainingMinutes} minutes.`;
         }
-    </script>
 
-    <!-- Ce code crée une page web qui permet aux utilisateurs de saisir le nombre de minutes, 
-    puis de cliquer sur un bouton pour convertir cette valeur en heures et minutes. 
-    Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
-    Le code utilise la méthode Number() pour convertir la chaîne de caractères de l'entrée en un nombre, 
-    puis divise ce nombre par 60 pour obtenir le nombre d'heures entières, et utilise l'opérateur modulo (%) 
-    pour trouver les minutes restantes. Enfin, le résultat est affiché sur la page en utilisant la propriété 
-    textContent de l'élément cible.
-    -->
+
+    //Ce code crée une page web qui permet aux utilisateurs de saisir le nombre de minutes, 
+    //puis de cliquer sur un bouton pour convertir cette valeur en heures et minutes. 
+    //Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
+    //Le code utilise la méthode Number() pour convertir la chaîne de caractères de l'entrée en un nombre, 
+    //puis divise ce nombre par 60 pour obtenir le nombre d'heures entières, et utilise l'opérateur modulo (%) 
+    //pour trouver les minutes restantes. Enfin, le résultat est affiché sur la page en utilisant la propriété 
+    //textContent de l'élément cible.
+
+  </script>
 
 <script>
   let display = document.querySelector('.display');
@@ -236,7 +238,6 @@
       display.innerHTML = result;
       scratchPadText.push(expression + '% = ' + result); // Ajouter le calcul et le résultat dans le tableau
       updateScratchPad();
-
     }
 
     function calculate() {
@@ -265,6 +266,25 @@
     //Lorsque l'utilisateur clique sur le bouton "=", nous ajoutons l'opération et le résultat dans un nouvel élément du tableau.
     //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat) 
     //dans un paragraphe HTML séparé. Ainsi, chaque opération de calcul et chaque résultat apparaissent sur une ligne séparée dans la table de brouillon.
+
+    const input = document.getElementById("minute1", "minute2");
+    const btn = document.getElementById('convertBtn');
+
+    // Ajouter un écouteur d'événements pour la touche Entrée sur le champ d'entrée
+    input.addEventListener('keydown', function(event) {
+      if (event.keyCode === 13) { // Si la touche appuyée est Entrée
+        event.preventDefault(); // Empêcher le comportement par défaut de la touche Entrée sur le champ d'entrée (soumission du formulaire)
+        convert(); // Appeler la fonction de conversion
+      }
+    });
+
+    // Ajouter un écouteur d'événements pour le clic sur le bouton de conversion
+    btn.addEventListener('click', convert);
+
+    function convert() {
+      // Votre fonction de conversion ici
+    }
+
   
     </script>
     
