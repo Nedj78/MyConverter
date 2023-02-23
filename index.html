@@ -110,12 +110,15 @@
       margin: 0;
       float: left;
       text-decoration: underline;
+      text-underline-offset: 0.3rem;
+      font-family: "Walter Turncoat", cursive;
     }
 
     .scratch-pad p {
       font-size: 14px;
       margin: 15px 0 0 0;
       float: left;
+      font-family: "Walter Turncoat", cursive;
     }
 
 </style>
@@ -254,7 +257,7 @@
     }
 
     function updateScratchPad() {
-      let scratchPadHTML = '<h2>Table de brouillon</h2>';
+      let scratchPadHTML = '<h2>Tableau de brouillon</h2>';
       scratchPadText.forEach(function(item) {
         scratchPadHTML += '<br>' + '<p>' + item + '</p>' + '<br>';
       });
