@@ -192,7 +192,7 @@
     <script>
     const input = document.getElementById("minute1", "minute2");
     const btn = document.getElementById('convertBtn');
-
+    
     // Ajouter un écouteur d'événements pour le clic sur le bouton de conversion
     btn.addEventListener('click', convert);
     
@@ -200,7 +200,7 @@
       const hourInput1 = Number(document.getElementById("hourInput1").value);
       const minuteInput1 = Number(document.getElementById("minuteInput1").value);
       const totalMinutes = hourInput1 * 60 + minuteInput1;
-      document.getElementById("resultInput1").textContent = `${hourInput1}heures et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
+      document.getElementById("resultInput1").textContent = `${hourInput1} heures et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
     }
     
     function toConvertInput2() {
@@ -209,17 +209,17 @@
       const remainingMinutes = minuteInput2 % 60;
       document.getElementById("resultInput3").textContent = `${minuteInput2} minutes équivaut à ${hourInput2} heures et ${remainingMinutes} minutes.`;
     }
-  
+    
     function toConvertInput3() {
       const hourInput3 = Number(document.getElementById("hourInput3").value);
       const totalDays = Math.floor(hourInput3 / 24);
       const remainingHours = hourInput3 % 24;
       document.getElementById("resultInput3").textContent = `${hourInput3} heures équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
     }
-  
+    
     function toConvertInput4() {
       const dayInput4 = Number(document.getElementById("dayInput4").value);
-      const totalHours = dayInput5 * 24;
+      const totalHours = dayInput5 * 24; // Correction de la variable dayInput5 à dayInput4
       document.getElementById("resultInput4").textContent = `${dayInput4} jour(s) équivaut à ${totalHours} heures.`;
     }
     
@@ -227,7 +227,7 @@
     let scratchPad = document.querySelector('.scratch-pad');
     let scratchPadText = [];
     let lastResult = null;
-
+    
     function appendToDisplay(value) {
       if (lastResult !== null) {
         display.innerHTML = '';
@@ -236,26 +236,26 @@
       display.innerHTML += value;
       updateScratchPad();
     }
-
+    
     function clearDisplay() {
       display.innerHTML = '';
       scratchPadText = [];
       updateScratchPad();
     }
-
+    
     function backspace() {
       display.innerHTML = display.innerHTML.slice(0, -1);
       updateScratchPad();
     }
-
+    
     function percentage() {
       let expression = display.innerHTML;
       let result = eval(expression) / 100;
       display.innerHTML = result;
-      scratchPadText.push(expression + '% = ' + result); // Ajouter le calcul et le résultat dans le tableau
+      scratchPadText.push(expression + '% = ' + result);
       updateScratchPad();
     }
-
+    
     function calculate() {
       let expression = display.innerHTML;
       let result = eval(expression);
@@ -268,22 +268,23 @@
       lastResult = result;
       updateScratchPad();
     }
-
+    
     function updateScratchPad() {
       let scratchPadHTML = '<h2>Tableau de brouillon</h2>';
-      scratchPadText.forEach(function(item) {
+      scratchPadText.forEach(function (item) {
         scratchPadHTML += '<br>' + '<p>' + item + '</p>' + '<br>';
       });
       scratchPad.innerHTML = scratchPadHTML;
     }
-
-    //scratchPadText est maintenant un tableau qui stocke les opérations de calcul et les résultats séparément. 
-    //Lorsque l'utilisateur saisit une opération de calcul, nous ajoutons cette opération au dernier élément du tableau. 
+    
+    //scratchPadText est maintenant un tableau qui stocke les opérations de calcul et les résultats séparément.
+    //Lorsque l'utilisateur saisit une opération de calcul, nous ajoutons cette opération au dernier élément du tableau.
     //Lorsque l'utilisateur clique sur le bouton "=", nous ajoutons l'opération et le résultat dans un nouvel élément du tableau.
-    //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat) 
+    //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat)
     //dans un paragraphe HTML séparé. Ainsi, chaque opération de calcul et chaque résultat apparaissent sur une ligne séparée dans la table de brouillon.
-
+    
     document.addEventListener('contextmenu', event => event.preventDefault()); //clic droit impossible
+    
 
   </script>
   
