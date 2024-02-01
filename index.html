@@ -133,25 +133,25 @@
     <label for="minutes">Minutes:</label>
     <input type="number" id="minuteInput1" min="0" max="59">
     <button class="button" id="convertBtn" onclick="toConvertInput1()">Convertir</button>
-    <p id="result1"></p>
+    <p id="resultInput1"></p>
 
     <h1>Convertisseur Minutes > Heures</h1>
     <label for="minuteInput2">Minutes:</label>
     <input type="number" id="minuteInput2" min="0">
     <button class="button" onclick="toConvertInput2()">Convertir</button>
-    <p id="result2"></p>
+    <p id="resultInput3"></p>
 
     <h1>Convertisseur Heures > Jours</h1>
     <label for="hourInput3">Heures:</label>
     <input type="number" id="hourInput3" min="0">
     <button class="button" onclick="toConvertInput3()">Convertir</button>
-    <p id="result3"></p>
+    <p id="resultInput3"></p>
 
     <h1>Convertisseur Jours > Heures</h1>
     <label for="dayInput5">Jours:</label>
     <input type="number" id="dayInput5" min="0">
     <button class="button" onclick="toConvertInput5()">Convertir</button>
-    <p id="result4"></p>
+    <p id="resultInput4"></p>
 
     <h1>Calculatrice</h1>
     <div class="calculator">
@@ -200,27 +200,27 @@
       const hourInput1 = Number(document.getElementById("hourInput1").value);
       const minuteInput1 = Number(document.getElementById("minuteInput1").value);
       const totalMinutes = hourInput1 * 60 + minuteInput1;
-      document.getElementById("result1").textContent = `${hourInput1}heures et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
+      document.getElementById("resultInput1").textContent = `${hourInput1}heures et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
     }
     
     function toConvertInput2() {
       const minuteInput2 = Number(document.getElementById("minuteInput2").value);
       const hourInput2 = Math.floor(minuteInput2 / 60);
       const remainingMinutes = minuteInput2 % 60;
-      document.getElementById("result2").textContent = `${minuteInput2} minutes équivaut à ${hourInput2} heures et ${remainingMinutes} minutes.`;
+      document.getElementById("resultInput3").textContent = `${minuteInput2} minutes équivaut à ${hourInput2} heures et ${remainingMinutes} minutes.`;
     }
   
     function toConvertInput3() {
       const hourInput3 = Number(document.getElementById("hourInput3").value);
       const totalDays = Math.floor(hourInput3 / 24);
       const remainingHours = hourInput3 % 24;
-      document.getElementById("result3").textContent = `${hourInput3} heures équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
+      document.getElementById("resultInput3").textContent = `${hourInput3} heures équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
     }
   
-    function toConvertInput5() {
-      const dayInput5 = Number(document.getElementById("dayInput5").value);
+    function toConvertInput4() {
+      const dayInput4 = Number(document.getElementById("dayInput4").value);
       const totalHours = dayInput5 * 24;
-      document.getElementById("result4").textContent = `${dayInput5} jour(s) équivaut à ${totalHours} heures.`;
+      document.getElementById("resultInput4").textContent = `${dayInput4} jour(s) équivaut à ${totalHours} heures.`;
     }
     
     let display = document.querySelector('.display');
