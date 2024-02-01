@@ -198,13 +198,6 @@
       }
     </script>
 
-    <!-- Ce code crée une page web qui permet aux utilisateurs de saisir le nombre d'heures et de minutes, 
-    puis de cliquer sur un bouton pour convertir ces valeurs en minutes. 
-    Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
-    Le code utilise la méthode Number() pour convertir les chaînes de caractères des entrées en nombres, 
-    puis calcule le total des minutes en multipliant le nombre d'heures par 60 et en ajoutant les minutes restantes. 
-    Enfin, le résultat est affiché sur la page en utilisant la propriété textContent de l'élément cible.      
-    -->
 
     <script>
         function convert2() {
@@ -213,13 +206,6 @@
           const remainingMinutes = minutes2 % 60;
           document.getElementById("result2").textContent = `${minutes2} minutes équivaut à ${hours2} heures et ${remainingMinutes} minutes.`;
         }
-    //Ce code crée une page web qui permet aux utilisateurs de saisir le nombre de minutes, 
-    //puis de cliquer sur un bouton pour convertir cette valeur en heures et minutes. 
-    //Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
-    //Le code utilise la méthode Number() pour convertir la chaîne de caractères de l'entrée en un nombre, 
-    //puis divise ce nombre par 60 pour obtenir le nombre d'heures entières, et utilise l'opérateur modulo (%) 
-    //pour trouver les minutes restantes. Enfin, le résultat est affiché sur la page en utilisant la propriété 
-    //textContent de l'élément cible.
 
   </script>
 
@@ -241,7 +227,14 @@
   </script> 
 
   <script>
-    let display = document.querySelector('.display');
+     
+      const input = document.getElementById("minute1", "minute2");
+      const btn = document.getElementById('convertBtn');
+
+      // Ajouter un écouteur d'événements pour le clic sur le bouton de conversion
+      btn.addEventListener('click', convert);
+    
+      let display = document.querySelector('.display');
       let scratchPad = document.querySelector('.scratch-pad');
       let scratchPadText = [];
       let lastResult = null;
@@ -300,26 +293,7 @@
       //Lorsque l'utilisateur clique sur le bouton "=", nous ajoutons l'opération et le résultat dans un nouvel élément du tableau.
       //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat) 
       //dans un paragraphe HTML séparé. Ainsi, chaque opération de calcul et chaque résultat apparaissent sur une ligne séparée dans la table de brouillon.
-
-      const input = document.getElementById("minute1", "minute2");
-      const btn = document.getElementById('convertBtn');
-
-      // Ajouter un écouteur d'événements pour la touche Entrée sur le champ d'entrée
-      input.addEventListener('keydown', function(event) {
-        if (event.keyCode === 13) { // Si la touche appuyée est Entrée
-          event.preventDefault(); // Empêcher le comportement par défaut de la touche Entrée sur le champ d'entrée (soumission du formulaire)
-          convert(); // Appeler la fonction de conversion
-        }
-      });
-
-      // Ajouter un écouteur d'événements pour le clic sur le bouton de conversion
-      btn.addEventListener('click', convert);
-
-      function convert() {
-        // Votre fonction de conversion ici
-      }
   </script>
-    
     
 
     <script type='text/javascript'>
