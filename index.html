@@ -129,28 +129,28 @@
 
     <h1>Convertisseur Heures > Minutes</h1>
     <label for="hours">Heures:</label>
-    <input type="number" id="hours1" min="0">
+    <input type="number" id="hourInput1" min="0">
     <label for="minutes">Minutes:</label>
-    <input type="number" id="minutes1" min="0" max="59">
-    <button class="button" id="convertBtn" onclick="convert1()">Convertir</button>
+    <input type="number" id="minuteInput1" min="0" max="59">
+    <button class="button" id="convertBtn" onclick="toConvertInput1()">Convertir</button>
     <p id="result1"></p>
 
     <h1>Convertisseur Minutes > Heures</h1>
-    <label for="minutes2">Minutes:</label>
-    <input type="number" id="minutes2" min="0">
-    <button class="button" onclick="convert2()">Convertir</button>
+    <label for="minuteInput2">Minutes:</label>
+    <input type="number" id="minuteInput2" min="0">
+    <button class="button" onclick="toConvertInput2()">Convertir</button>
     <p id="result2"></p>
 
     <h1>Convertisseur Heures > Jours</h1>
-    <label for="hours3">Heures:</label>
-    <input type="number" id="hours3" min="0">
-    <button class="button" onclick="convert3()">Convertir</button>
+    <label for="hourInput3">Heures:</label>
+    <input type="number" id="hourInput3" min="0">
+    <button class="button" onclick="toConvertInput3()">Convertir</button>
     <p id="result3"></p>
 
     <h1>Convertisseur Jours > Heures</h1>
-    <label for="days4">Jours:</label>
-    <input type="number" id="days4" min="0">
-    <button class="button" onclick="convert4()">Convertir</button>
+    <label for="dayInput5">Jours:</label>
+    <input type="number" id="dayInput5" min="0">
+    <button class="button" onclick="toConvertInput5()">Convertir</button>
     <p id="result4"></p>
 
     <h1>Calculatrice</h1>
@@ -188,113 +188,102 @@
       </div>
       <div class="scratch-pad"></div>
     </div>
-
-    <script>
-      function convert1() {
-        const hours1 = Number(document.getElementById("hours1").value);
-        const minutes1 = Number(document.getElementById("minutes1").value);
-        const totalMinutes = hours1 * 60 + minutes1;
-        document.getElementById("result1").textContent = `${hours1}heures et ${minutes1} minutes équivaut à ${totalMinutes} minutes.`;
-      }
-    </script>
-
-
-    <script>
-        function convert2() {
-          const minutes2 = Number(document.getElementById("minutes2").value);
-          const hours2 = Math.floor(minutes2 / 60);
-          const remainingMinutes = minutes2 % 60;
-          document.getElementById("result2").textContent = `${minutes2} minutes équivaut à ${hours2} heures et ${remainingMinutes} minutes.`;
-        }
-
-  </script>
-
-  <script>
-    function convert3() {
-      const hours3 = Number(document.getElementById("hours3").value);
-      const totalDays = Math.floor(hours3 / 24);
-      const remainingHours = hours3 % 24;
-      document.getElementById("result3").textContent = `${hours3} heures équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
-    }
-  </script>
-
-  <script>
-    function convert4() {
-      const days4 = Number(document.getElementById("days4").value);
-      const totalHours = days4 * 24;
-      document.getElementById("result4").textContent = `${days4} jour(s) équivaut à ${totalHours} heures.`;
-    }
-  </script> 
-
-  <script>
-     
-      const input = document.getElementById("minute1", "minute2");
-      const btn = document.getElementById('convertBtn');
-
-      // Ajouter un écouteur d'événements pour le clic sur le bouton de conversion
-      btn.addEventListener('click', convert);
     
-      let display = document.querySelector('.display');
-      let scratchPad = document.querySelector('.scratch-pad');
-      let scratchPadText = [];
-      let lastResult = null;
+    <script>
+    const input = document.getElementById("minute1", "minute2");
+    const btn = document.getElementById('convertBtn');
 
-      function appendToDisplay(value) {
-        if (lastResult !== null) {
-          display.innerHTML = '';
-          lastResult = null;
-        }
-        display.innerHTML += value;
-        updateScratchPad();
-      }
+    // Ajouter un écouteur d'événements pour le clic sur le bouton de conversion
+    btn.addEventListener('click', convert);
+    
+    function toConvertInput1() {
+      const hourInput1 = Number(document.getElementById("hourInput1").value);
+      const minuteInput1 = Number(document.getElementById("minuteInput1").value);
+      const totalMinutes = hourInput1 * 60 + minuteInput1;
+      document.getElementById("result1").textContent = `${hourInput1}heures et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
+    }
+    
+    function toConvertInput2() {
+      const minuteInput2 = Number(document.getElementById("minuteInput2").value);
+      const hourInput2 = Math.floor(minuteInput2 / 60);
+      const remainingMinutes = minuteInput2 % 60;
+      document.getElementById("result2").textContent = `${minuteInput2} minutes équivaut à ${hourInput2} heures et ${remainingMinutes} minutes.`;
+    }
+  
+    function toConvertInput3() {
+      const hourInput3 = Number(document.getElementById("hourInput3").value);
+      const totalDays = Math.floor(hourInput3 / 24);
+      const remainingHours = hourInput3 % 24;
+      document.getElementById("result3").textContent = `${hourInput3} heures équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
+    }
+  
+    function toConvertInput5() {
+      const dayInput5 = Number(document.getElementById("dayInput5").value);
+      const totalHours = dayInput5 * 24;
+      document.getElementById("result4").textContent = `${dayInput5} jour(s) équivaut à ${totalHours} heures.`;
+    }
+    
+    let display = document.querySelector('.display');
+    let scratchPad = document.querySelector('.scratch-pad');
+    let scratchPadText = [];
+    let lastResult = null;
 
-      function clearDisplay() {
+    function appendToDisplay(value) {
+      if (lastResult !== null) {
         display.innerHTML = '';
-        scratchPadText = [];
-        updateScratchPad();
+        lastResult = null;
       }
+      display.innerHTML += value;
+      updateScratchPad();
+    }
 
-      function backspace() {
-        display.innerHTML = display.innerHTML.slice(0, -1);
-        updateScratchPad();
+    function clearDisplay() {
+      display.innerHTML = '';
+      scratchPadText = [];
+      updateScratchPad();
+    }
+
+    function backspace() {
+      display.innerHTML = display.innerHTML.slice(0, -1);
+      updateScratchPad();
+    }
+
+    function percentage() {
+      let expression = display.innerHTML;
+      let result = eval(expression) / 100;
+      display.innerHTML = result;
+      scratchPadText.push(expression + '% = ' + result); // Ajouter le calcul et le résultat dans le tableau
+      updateScratchPad();
+    }
+
+    function calculate() {
+      let expression = display.innerHTML;
+      let result = eval(expression);
+      display.innerHTML = result;
+      if (lastResult === null) {
+        scratchPadText.push(expression + ' = ' + result);
+      } else {
+        scratchPadText.push(lastResult + ' ' + expression + ' = ' + result);
       }
+      lastResult = result;
+      updateScratchPad();
+    }
 
-      function percentage() {
-        let expression = display.innerHTML;
-        let result = eval(expression) / 100;
-        display.innerHTML = result;
-        scratchPadText.push(expression + '% = ' + result); // Ajouter le calcul et le résultat dans le tableau
-        updateScratchPad();
-      }
+    function updateScratchPad() {
+      let scratchPadHTML = '<h2>Tableau de brouillon</h2>';
+      scratchPadText.forEach(function(item) {
+        scratchPadHTML += '<br>' + '<p>' + item + '</p>' + '<br>';
+      });
+      scratchPad.innerHTML = scratchPadHTML;
+    }
 
-      function calculate() {
-        let expression = display.innerHTML;
-        let result = eval(expression);
-        display.innerHTML = result;
-        if (lastResult === null) {
-          scratchPadText.push(expression + ' = ' + result);
-        } else {
-          scratchPadText.push(lastResult + ' ' + expression + ' = ' + result);
-        }
-        lastResult = result;
-        updateScratchPad();
-      }
+    //scratchPadText est maintenant un tableau qui stocke les opérations de calcul et les résultats séparément. 
+    //Lorsque l'utilisateur saisit une opération de calcul, nous ajoutons cette opération au dernier élément du tableau. 
+    //Lorsque l'utilisateur clique sur le bouton "=", nous ajoutons l'opération et le résultat dans un nouvel élément du tableau.
+    //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat) 
+    //dans un paragraphe HTML séparé. Ainsi, chaque opération de calcul et chaque résultat apparaissent sur une ligne séparée dans la table de brouillon.
 
-      function updateScratchPad() {
-        let scratchPadHTML = '<h2>Tableau de brouillon</h2>';
-        scratchPadText.forEach(function(item) {
-          scratchPadHTML += '<br>' + '<p>' + item + '</p>' + '<br>';
-        });
-        scratchPad.innerHTML = scratchPadHTML;
-      }
-
-      //scratchPadText est maintenant un tableau qui stocke les opérations de calcul et les résultats séparément. 
-      //Lorsque l'utilisateur saisit une opération de calcul, nous ajoutons cette opération au dernier élément du tableau. 
-      //Lorsque l'utilisateur clique sur le bouton "=", nous ajoutons l'opération et le résultat dans un nouvel élément du tableau.
-      //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat) 
-      //dans un paragraphe HTML séparé. Ainsi, chaque opération de calcul et chaque résultat apparaissent sur une ligne séparée dans la table de brouillon.
-
-      document.addEventListener('contextmenu', event => event.preventDefault()); //clic droit impossible
+    document.addEventListener('contextmenu', event => event.preventDefault()); //clic droit impossible
 
   </script>
   
