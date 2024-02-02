@@ -207,12 +207,6 @@
     const hourInput1Number = Number(hourInput1);
     const minuteInput1Number = Number(minuteInput1);
   
-    // Vérifier si les valeurs sont des nombres valides
-    if (isNaN(hourValue) || isNaN(minuteValue)) {
-      alert("Veuillez saisir un format de nombre valide.");
-      return; // Arrêter la fonction si les valeurs ne sont pas des nombres
-    }
-  
     let resultText = `${hourInput1Number} ${slicedStringForInput1} et ${minuteInput1Number} minutes équivalent à ${hourInput1Number * 60 + minuteInput1Number} minutes.`;
   
     if (hourValue < 2) {
