@@ -191,15 +191,17 @@
     
     <script>
 
+    const stringForInput1 = "Minutes";
+    let slicedStringForInput1;
+
     function toConvertInput1() {
       const hourInput1 = Number(document.getElementById("hourInput1").value);
       const minuteInput1 = Number(document.getElementById("minuteInput1").value);
       const totalMinutes = hourInput1 * 60 + minuteInput1;
-      document.getElementById("resultInput1").textContent = `${hourInput1} heures et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
+      document.getElementById("resultInput1").textContent = `${hourInput1} ${slicedTextForInput1} et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
 
     if (hourInput1 < 2) {
-      const inputValues = hourInput1.value.toString(); // Convertir la valeur en chaîne
-      inputElements.value = inputValues.slice(0, -1);      
+      slicedStringForInput1 = stringForInput1.slice(0, -1);
       }
     }
     
@@ -219,7 +221,7 @@
     
     function toConvertInput4() {
       const dayInput4 = Number(document.getElementById("dayInput4").value);
-      const totalHours = dayInput4 * 24; 
+      const totalHours = dayInput4 * 24;
       document.getElementById("resultInput4").textContent = `${dayInput4} jour(s) équivaut à ${totalHours} heures.`;
     }
 
