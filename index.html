@@ -204,7 +204,7 @@
 
     if (hourInput1 < 2 || minuteInput1 < 2 || totalMinutes < 2 || minuteInput2 < 2 || hourInput2 < 2 || remainingMinutes < 2) || hourInput3 < 2 || totalDays < 2 || remainingHours < 2 || dayInput4 < 2
       "totalHours") {
-      const inputElement = document.querySelectorAll("#hourInput1","#minuteInput1", "#totalMinutes", "#minuteInput", "#hourInput2", "#remainingMinutes", "#hourInput3", "#totalDays", "#remainingHours", "#dayInput4", "#totalHours");
+      const inputElement = document.querySelectorAll("#hourInput1","#minuteInput1", "#totalMinutes", "#minuteInput2", "#hourInput2", "#remainingMinutes", "#hourInput3", "#totalDays", "#remainingHours", "#dayInput4", "#totalHours");
       const inputValues = inputElements.value.toString(); // Convertir la valeur en chaîne
       inputElements.value = inputValues.slice(0, -1);
       }
