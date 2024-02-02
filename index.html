@@ -191,33 +191,40 @@
     
     <script>
 
-    let slicedStringForInput1 = "minutes";
+let slicedStringForInput1 = "minutes";
 
-    function toConvertInput1() {
-    const hourInput1 = document.getElementById("hourInput1").value.trim();
-    const minuteInput1 = document.getElementById("minuteInput1").value.trim();
-  
-    // Vérifier si les champs sont vides
-    if (hourInput1 === '' || minuteInput1 === '') {
-      alert("Veuillez au moins saisir un nombre.");
-      return; // Arrêter la fonction si l'input est vide
-    }
-  
-    // Convertir les valeurs en nombres
-    const hourInput1Number = Number(hourInput1);
-    const minuteInput1Number = Number(minuteInput1);
-  
-    let resultText = `${hourInput1Number} ${slicedStringForInput1} et ${minuteInput1Number} minutes équivalent à ${hourInput1Number * 60 + minuteInput1Number} minutes.`;
-  
-    if (hourValue < 2) {
-      slicedStringForInput1 = slicedStringForInput1.slice(0, -1);
-      resultText = `${hourInput1Number} ${slicedStringForInput1} et ${minuteInput1Number} minutes équivalent à ${hourInput1Number * 60 + minuteInput1Number} minutes.`;
-    }
+function toConvertInput1() {
+  const hourInput1 = document.getElementById("hourInput1").value.trim();
+  const minuteInput1 = document.getElementById("minuteInput1").value.trim();
 
-    document.getElementById("hourInput1").value = '';
-    document.getElementById("minuteInput1").value = '';
-    document.getElementById("resultInput1").textContent = resultText;
+  // Vérifier si les champs sont vides
+  if (hourInput1 === '' || minuteInput1 === '') {
+    alert("Veuillez saisir des valeurs valides.");
+    return; // Arrêter la fonction si l'input est vide
   }
+
+  // Convertir les valeurs en nombres
+  const hourInput1Number = Number(hourInput1);
+  const minuteInput1Number = Number(minuteInput1);
+
+  // Vérifier si les valeurs sont des nombres valides
+  if (isNaN(hourInput1Number) || isNaN(minuteInput1Number)) {
+    alert("Veuillez saisir des nombres valides.");
+    return; // Arrêter la fonction si les valeurs ne sont pas des nombres
+  }
+
+  let resultText = `${hourInput1Number} ${slicedStringForInput1} et ${minuteInput1Number} minutes équivalent à ${hourInput1Number * 60 + minuteInput1Number} minutes.`;
+
+  if (hourInput1Number < 2) {
+    slicedStringForInput1 = slicedStringForInput1.slice(0, -1);
+    resultText = `${hourInput1Number} ${slicedStringForInput1} et ${minuteInput1Number} minutes équivalent à ${hourInput1Number * 60 + minuteInput1Number} minutes.`;
+  }
+
+  document.getElementById("hourInput1").value = '';
+  document.getElementById("minuteInput1").value = '';
+  document.getElementById("resultInput1").textContent = resultText;
+}
+
 
 
     function toConvertInput2() {
