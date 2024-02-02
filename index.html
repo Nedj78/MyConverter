@@ -213,11 +213,11 @@
       return; // Arrêter la fonction si les valeurs ne sont pas des nombres
     }
   
-    let resultText = `${hourValue} ${slicedStringForInput1} et ${minuteValue} minutes équivalent à ${hourValue * 60 + minuteValue} minutes.`;
+    let resultText = `${hourInput1Number} ${slicedStringForInput1} et ${minuteInput1Number} minutes équivalent à ${hourInput1Number * 60 + minuteInput1Number} minutes.`;
   
     if (hourValue < 2) {
       slicedStringForInput1 = slicedStringForInput1.slice(0, -1);
-      resultText = `${hourValue} ${slicedStringForInput1} et ${minuteValue} minutes équivalent à ${hourValue * 60 + minuteValue} minutes.`;
+      resultText = `${hourInput1Number} ${slicedStringForInput1} et ${minuteInput1Number} minutes équivalent à ${hourInput1Number * 60 + minuteInput1Number} minutes.`;
     }
 
     document.getElementById("hourInput1").value = '';
