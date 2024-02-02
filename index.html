@@ -191,7 +191,7 @@
     
     <script>
 
-    let slicedStringForInput1 = "minutes";
+    
 
     function toConvertInput1() {
       const hourInput1 = Number(document.getElementById("hourInput1").value);
@@ -200,7 +200,8 @@
       document.getElementById("resultInput1").textContent = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
 
     if(hourInput1 < 2) {
-      slicedStringForInput1 = slicedStringForInput1.slice(0, -1);
+      const slicedStringForInput1 = "minutes";
+      slicedStringForInput1.textContent = slicedStringForInput1.slice(0, -1);
       }
     }
     
