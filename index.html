@@ -206,7 +206,7 @@
     }
     /*/
 
-      let slicedStringForInput1 = "minutes";
+    let slicedStringForInput1 = "minutes";
 
     function toConvertInput1() {
       const hourInput1 = Number(document.getElementById("hourInput1").value);
@@ -218,7 +218,7 @@
         resultText = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivalent à ${hourInput1 * 60 + minuteInput1} minutes.`;
       }
     
-      document.getElementById("hourInput1") = '';
+      document.getElementById("hourInput1").value = '';
       document.getElementById("resultInput1").textContent = resultText;
     }
 
