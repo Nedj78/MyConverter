@@ -218,6 +218,12 @@ function toConvertInput1() {
     resultText = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivalent à ${hourInput1 * 60 + minuteInput1} minutes.`;
   }
 
+        // Vérifie si le champ de saisie est vide
+      if (hourInput1.trim() && minuteInput1.trim() === "") {
+        // Si c'est le cas, ne fait rien
+        return;
+      }
+
   document.getElementById("resultInput1").textContent = resultText;
 }
 
