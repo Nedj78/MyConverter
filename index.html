@@ -201,6 +201,12 @@
       const minuteInput1 = Number(document.getElementById("minuteInput1").value);
       const totalMinutes = hourInput1 * 60 + minuteInput1;
       document.getElementById("resultInput1").textContent = `${hourInput1} heures et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
+
+    if (hourInput1 < 2) {
+      const inputElement = document.getElementById("hourInput1");
+      const inputValue = inputElement.value.toString(); // Convertir la valeur en chaîne
+      inputElement.value = inputValue.slice(0, -1);
+      }
     }
     
     function toConvertInput2() {
