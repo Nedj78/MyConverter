@@ -203,7 +203,7 @@
       document.getElementById("resultInput1").textContent = `${hourInput1} heures et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
 
        if (hourInput1 < 2 || minuteInput1 < 2 || totalMinutes < 2) {
-      const inputElement = document.querySelectorAll("#hourInput1",'#minuteInput1','#totalMinutes");
+      const inputElement = document.querySelectorAll("#hourInput1",'#minuteInput1','#totalMinutes');
       const inputValues = inputElements.value.toString(); // Convertir la valeur en chaîne
       inputElements.value = inputValues.slice(0, -1);      
       alert("Veuillez entrer des valeurs supérieures à 1.");
