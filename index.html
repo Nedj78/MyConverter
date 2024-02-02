@@ -206,6 +206,7 @@
     }
     /*/
 
+      /*
     let slicedStringForInput1 = "minutes";
 
     function toConvertInput1() {
@@ -226,6 +227,41 @@
       document.getElementById("hourInput1").value = '';
       document.getElementById("resultInput1").textContent = resultText;
     }
+    */
+
+    let slicedStringForInput1 = "minutes";
+
+function toConvertInput1() {
+  const hourInput1 = document.getElementById("hourInput1").value.trim();
+  const minuteInput1 = document.getElementById("minuteInput1").value.trim();
+
+  // Vérifier si les champs sont vides
+  if (hourInput1 === '' || minuteInput1 === '') {
+    alert("Veuillez saisir des valeurs valides.");
+    return; // Arrêter la fonction si l'input est vide
+  }
+
+  // Convertir les valeurs en nombres
+  const hourValue = Number(hourInput1);
+  const minuteValue = Number(minuteInput1);
+
+  // Vérifier si les valeurs sont des nombres valides
+  if (isNaN(hourValue) || isNaN(minuteValue)) {
+    alert("Veuillez saisir des nombres valides.");
+    return; // Arrêter la fonction si les valeurs ne sont pas des nombres
+  }
+
+  let resultText = `${hourValue} ${slicedStringForInput1} et ${minuteValue} minutes équivalent à ${hourValue * 60 + minuteValue} minutes.`;
+
+  if (hourValue < 2) {
+    slicedStringForInput1 = slicedStringForInput1.slice(0, -1);
+    resultText = `${hourValue} ${slicedStringForInput1} et ${minuteValue} minutes équivalent à ${hourValue * 60 + minuteValue} minutes.`;
+  }
+
+  document.getElementById("hourInput1").value = '';
+  document.getElementById("resultInput1").textContent = resultText;
+}
+
 
     function toConvertInput2() {
       const minuteInput2 = Number(document.getElementById("minuteInput2").value);
