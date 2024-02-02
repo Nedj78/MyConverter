@@ -208,6 +208,14 @@
       const inputValues = inputElements.value.toString(); // Convertir la valeur en chaîne
       inputElements.value = inputValues.slice(0, -1);
       }
+
+       if (hourInput1 < 2 || minuteInput1 < 2 || totalMinutes < 2) {
+      const inputElement = document.querySelectorAll("#hourInput1",'#minuteInput1','#totalMinutes");
+      const inputValues = inputElements.value.toString(); // Convertir la valeur en chaîne
+      inputElements.value = inputValues.slice(0, -1);      
+      alert("Veuillez entrer des valeurs supérieures à 1.");
+      return; // Sortir de la fonction pour éviter d'exécuter le reste du code en cas d'erreur
+    }
     }
     
     function toConvertInput2() {
