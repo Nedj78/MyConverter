@@ -202,12 +202,10 @@
       const totalMinutes = hourInput1 * 60 + minuteInput1;
       document.getElementById("resultInput1").textContent = `${hourInput1} heures et ${minuteInput1} minutes équivaut à ${totalMinutes} minutes.`;
 
-       if (hourInput1 < 2 || minuteInput1 < 2 || totalMinutes < 2) {
-      const inputElement = document.querySelectorAll("#hourInput1",'#minuteInput1','#totalMinutes');
+       if (hourInput1 < 2) {
+      const inputElement = document.querySelectorAll("#hourInput1");
       const inputValues = inputElements.value.toString(); // Convertir la valeur en chaîne
       inputElements.value = inputValues.slice(0, -1);      
-      alert("Veuillez entrer des valeurs supérieures à 1.");
-      return; // Sortir de la fonction pour éviter d'exécuter le reste du code en cas d'erreur
     }
     }
     
