@@ -208,24 +208,19 @@
 
       let slicedStringForInput1 = "minutes";
 
-function toConvertInput1() {
-  const hourInput1 = Number(document.getElementById("hourInput1").value);
-  const minuteInput1 = Number(document.getElementById("minuteInput1").value);
-  let resultText = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivalent à ${hourInput1 * 60 + minuteInput1} minutes.`;
-
-  if (hourInput1 < 2) {
-    slicedStringForInput1 = slicedStringForInput1.slice(0, -1);
-    resultText = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivalent à ${hourInput1 * 60 + minuteInput1} minutes.`;
-  }
-
-        // Vérifie si le champ de saisie est vide
-      if (slicedStringForInput1.trim() === "") {
-        // Si c'est le cas, ne fait rien
-        return;
+    function toConvertInput1() {
+      const hourInput1 = Number(document.getElementById("hourInput1").value);
+      const minuteInput1 = Number(document.getElementById("minuteInput1").value);
+      let resultText = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivalent à ${hourInput1 * 60 + minuteInput1} minutes.`;
+    
+      if (hourInput1 < 2) {
+        slicedStringForInput1 = slicedStringForInput1.slice(0, -1);
+        resultText = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivalent à ${hourInput1 * 60 + minuteInput1} minutes.`;
       }
-
-  document.getElementById("resultInput1").textContent = resultText;
-}
+    
+      document.getElementById("hourInput1") = '';
+      document.getElementById("resultInput1").textContent = resultText;
+    }
 
     function toConvertInput2() {
       const minuteInput2 = Number(document.getElementById("minuteInput2").value);
