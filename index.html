@@ -148,8 +148,8 @@
     <p id="resultInput3"></p>
 
     <h1>Convertisseur Jours > Heures</h1>
-    <label for="dayInput5">Jours:</label>
-    <input type="number" id="dayInput5" min="0">
+    <label for="dayInput4">Jours:</label>
+    <input type="number" id="dayInput4" min="0">
     <button class="button" onclick="toConvertInput5()">Convertir</button>
     <p id="resultInput4"></p>
 
@@ -219,7 +219,7 @@
     
     function toConvertInput4() {
       const dayInput4 = Number(document.getElementById("dayInput4").value);
-      const totalHours = dayInput5 * 24; // Correction de la variable dayInput5 à dayInput4
+      const totalHours = dayInput4 * 24; 
       document.getElementById("resultInput4").textContent = `${dayInput4} jour(s) équivaut à ${totalHours} heures.`;
     }
     
