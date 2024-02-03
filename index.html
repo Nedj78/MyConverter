@@ -242,12 +242,11 @@
 let resultText;
 if (hourInput1 < 2) {
   let firstSlice = slicedStringHourForInput1.slice(0, -1);
-  let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
-  resultText = `${hourInput1} ${firstSlice} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
+  resultText = `${hourInput1} ${firstSlice} et ${minuteInput1} ${slicedStringMinuteForInput1} équivaut à ${totalMinutes} minutes.`;
   slicedStringHourForInput1 = slicedStringHourForInput1.slice(0, -1); // Réinitialiser la variable globale
 
   if (minuteInput1 < 2) {
-    slicedStringMinuteForInput1 = "minutes"; // Réinitialiser la variable globale
+    slicedStringMinuteForInput1 = slicedStringMinuteForInput1.slice(0, -1); // Réinitialiser la variable globale
   }
 } else if (minuteInput1 < 2) {
   let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
@@ -256,6 +255,10 @@ if (hourInput1 < 2) {
 } else {
   resultText = `${hourInput1} ${slicedStringHourForInput1} et ${minuteInput1} ${slicedStringMinuteForInput1} équivaut à ${totalMinutes} minutes.`;
 }
+
+// Afficher le résultat
+document.getElementById("resultInput1").textContent = resultText;
+
 
     
       // Réinitialiser les valeurs des champs
