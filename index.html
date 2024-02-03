@@ -216,7 +216,7 @@
       if (hourInput1 === 0 && minuteInput1 === 0) {
         document.querySelector(".error").innerHTML = "Veuillez saisir au moins un nombre.";
         // Réinitialiser ou masquer le dernier résultat text
-          if(document.getElementById("resultInput1").textContent = '') {
+          if(document.getElementById("resultInput1").textContent = 'block') {
               document.querySelector(".error").innerHTML = "Veuillez saisir au moins un nombre.";
           }
         return; // Arrêter la fonction si les valeurs sont zéro
