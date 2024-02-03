@@ -254,13 +254,6 @@ document.getElementById("resultInput1").textContent = resultText;
       document.getElementById("resultInput1").textContent = resultText;
     }
 
-    /*function toConvertInput2() {
-      const minuteInput2 = Number(document.getElementById("minuteInput2").value);
-      const hourInput2 = Math.floor(minuteInput2 / 60);
-      const remainingMinutes = minuteInput2 % 60;
-      document.getElementById("resultInput2").textContent = `${minuteInput2} minutes équivaut à ${hourInput2} heures et ${remainingMinutes} minutes.`;
-    }*/
-
       let slicedStringHourForInput2 = "heures";
       let slicedStringMinuteForInput2 = "minutes";
 
@@ -280,44 +273,13 @@ document.getElementById("resultInput1").textContent = resultText;
         document.getElementById("resultInput2").textContent = `${minuteInput2} minutes équivaut à ${hourInput2} heures et ${remainingMinutes} minutes.`;
       }
 
-      // Nouvelles variables pour le troisième convertisseur
-      let slicedStringHourForInput3 = "heures";
-
-      function toConvertInput3() {
-        const hourInput3 = Number(document.getElementById("hourInput3").value);
-
-        if (isNaN(hourInput3)) {
-          document.querySelector(".error3").innerHTML = "Veuillez saisir un nombre.";
-          document.querySelector(".error3").style.display = 'block';
-          return;
-        } else {
-          document.querySelector(".error3").style.display = 'none';
-        }
-
-        const totalDays = Math.floor(hourInput3 / 24);
-        const remainingHours = hourInput3 % 24;
-        document.getElementById("resultInput3").textContent = `${hourInput3} heures équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
-      }
-
-      // Nouvelles variables pour le quatrième convertisseur
-      let slicedStringDayForInput4 = "jours";
-
-      function toConvertInput4() {
-        const dayInput4 = Number(document.getElementById("dayInput4").value);
-
-        if (isNaN(dayInput4)) {
-          document.querySelector(".error4").innerHTML = "Veuillez saisir un nombre.";
-          document.querySelector(".error4").style.display = 'block';
-          return;
-        } else {
-          document.querySelector(".error4").style.display = 'none';
-        }
-
-        const totalHours = dayInput4 * 24;
-        document.getElementById("resultInput4").textContent = `${dayInput4} jour(s) équivaut à ${totalHours} heures.`;
-      }
-
-      /*
+    function toConvertInput2() {
+      const minuteInput2 = Number(document.getElementById("minuteInput2").value);
+      const hourInput2 = Math.floor(minuteInput2 / 60);
+      const remainingMinutes = minuteInput2 % 60;
+      document.getElementById("resultInput2").textContent = `${minuteInput2} minutes équivaut à ${hourInput2} heures et ${remainingMinutes} minutes.`;
+    }
+      
     function toConvertInput3() {
       const hourInput3 = Number(document.getElementById("hourInput3").value);
       const totalDays = Math.floor(hourInput3 / 24);
@@ -329,7 +291,7 @@ document.getElementById("resultInput1").textContent = resultText;
       const dayInput4 = Number(document.getElementById("dayInput4").value);
       const totalHours = dayInput4 * 24;
       document.getElementById("resultInput4").textContent = `${dayInput4} jour(s) équivaut à ${totalHours} heures.`;
-    }*/
+    }
 
     </script>
 
