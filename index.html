@@ -208,11 +208,11 @@
       const totalMinutes = hourInput1 * 60 + minuteInput1;
     
       // Déterminer le texte en fonction de la condition
+      let result;
       if (hourInput1 < 2) {
         slicedStringForInput1 = slicedStringForInput1.slice(0, -1);
+        resultText = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivalent à ${totalMinutes} minutes.`;
       };
-
-      const resultText = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivalent à ${totalMinutes} minutes.`;
     
       // Afficher le résultat
       document.getElementById("resultInput1").textContent = resultText;
