@@ -200,8 +200,8 @@ function toConvertInput1() {
   const minuteInput1 = Number(document.getElementById("minuteInput1").value);
   
   // Vérifier si les valeurs sont des nombres valides
-  if (isNaN(hourInput1) || isNaN(minuteInput1)) {
-    alert("Veuillez saisir des nombres valides.");
+  if (hourInput1 === 0 || minuteInput1 === 0 {
+    alert("Veuillez saisir un nombre valide.");
     return; // Arrêter la fonction si les valeurs ne sont pas des nombres
   }
 
