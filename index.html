@@ -240,10 +240,8 @@
         resultText = `${hourInput1} ${slicedStringHourForInput1} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
       }
 
-// Afficher le résultat
-document.getElementById("resultInput1").textContent = resultText;
-
-
+      // Afficher le résultat
+      document.getElementById("resultInput1").textContent = resultText;
     
       // Réinitialiser les valeurs des champs
       document.getElementById("hourInput1").value = '';
@@ -254,37 +252,18 @@ document.getElementById("resultInput1").textContent = resultText;
       document.getElementById("resultInput1").textContent = resultText;
     }
 
-      let slicedStringHourForInput2 = "heures";
-      let slicedStringMinuteForInput2 = "minutes";
-
-      function toConvertInput2() {
-        const minuteInput2 = Number(document.getElementById("minuteInput2").value);
-
-        if (isNaN(minuteInput2)) {
-          document.querySelector(".error2").innerHTML = "Veuillez saisir un nombre.";
-          document.querySelector(".error2").style.display = 'block';
-          return;
-        } else {
-          document.querySelector(".error2").style.display = 'none';
-        }
-
-        const hourInput2 = Math.floor(minuteInput2 / 60);
-        const remainingMinutes = minuteInput2 % 60;
-        document.getElementById("resultInput2").textContent = `${minuteInput2} minutes équivaut à ${hourInput2} heures et ${remainingMinutes} minutes.`;
-      }
-
     function toConvertInput2() {
       const minuteInput2 = Number(document.getElementById("minuteInput2").value);
       const hourInput2 = Math.floor(minuteInput2 / 60);
       const remainingMinutes = minuteInput2 % 60;
-      document.getElementById("resultInput2").textContent = `${minuteInput2} minutes équivaut à ${hourInput2} heures et ${remainingMinutes} minutes.`;
+      document.getElementById("resultInput2").textContent = `${minuteInput2} minute(s) équivaut à ${hourInput2} heur(e) et ${remainingMinutes} minute(s).`;
     }
       
     function toConvertInput3() {
       const hourInput3 = Number(document.getElementById("hourInput3").value);
       const totalDays = Math.floor(hourInput3 / 24);
       const remainingHours = hourInput3 % 24;
-      document.getElementById("resultInput3").textContent = `${hourInput3} heures équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
+      document.getElementById("resultInput3").textContent = `${hourInput3} heure(s) équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
     }
     
     function toConvertInput4() {
