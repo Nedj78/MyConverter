@@ -204,12 +204,6 @@ function toConvertInput1() {
   console.log("Valeur saisie pour l'heure:", hourInput1);
   const minuteInput1 = Number(document.getElementById("minuteInput1").value);
 
-  // Vérifier si les valeurs sont des nombres valides
-  if (isNaN(hourInput1) || isNaN(minuteInput1)) {
-    document.querySelector("Veuillez saisir un nombre valide.");
-    return; // Arrêter la fonction si les valeurs ne sont pas des nombres
-  }
-
   // Vérifier si les valeurs sont zéro
   if (hourInput1 === 0 && minuteInput1 === 0) {
     document.getElementsByClassName("error").innerHTML = "Veuillez saisir un nombre.";
