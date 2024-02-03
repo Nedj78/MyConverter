@@ -192,48 +192,52 @@
     <script>
 
     let slicedStringHourForInput1 = "heures";
-    let slicedStringMinuteForInput1 = "minutes";
-    
-    function toConvertInput1() {
-      // Récupérer les valeurs des champs et les convertir en nombres
-      const hourInput1 = Number(document.getElementById("hourInput1").value);
-      const minuteInput1 = Number(document.getElementById("minuteInput1").value);
-      
-      // Vérifier si les valeurs sont des nombres valides
-      if (hourInput1 === 0 && minuteInput1 === 0) {
-        alert("Veuillez saisir au moins un nombre.");
-        return; // Arrêter la fonction si les valeurs sont zéro
-      }
-    
-      // Calculer le total des minutes
-      const totalMinutes = hourInput1 * 60 + minuteInput1;
-    
-      // Déterminer le texte en fonction de la condition
-      let resultText;
-      if (hourInput1 < 2) {
-        let firstSlice = slicedStringHourForInput1.slice(0, -1);
-        let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
-        resultText = `${hourInput1} ${slicedString} et ${minuteInput1} ${slicedStringMinuteForInput1} équivaut à ${totalMinutes} minutes.`;
-        slicedStringForInput1 = "heures"; // Réinitialiser la variable globale
-      } else {
-        resultText = `${hourInput1} ${slicedStringHourForInput1} et ${minuteInput1} ${slicedStringMinuteForInput1} équivaut à ${totalMinutes} minutes.`;
-      }
+let slicedStringMinuteForInput1 = "minutes";
 
-      if (minuteInput1 < 2) {
-        let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
-        resultText = `${hourInput1} ${slicedString} et ${minuteInput1} ${slicedStringMinuteForInput1} équivaut à ${totalMinutes} minutes.`;
-        slicedStringMinuteForInput1 = "minutes";  // Réinitialiser la variable globale
-      } else {
-        resultText = `${hourInput1} ${slicedStringHourForInput1} et ${minuteInput1} ${slicedStringMinuteForInput1} équivaut à ${totalMinutes} minutes.`;
-      }
+function toConvertInput1() {
+  // Récupérer les valeurs des champs et les convertir en nombres
+  const hourInput1 = Number(document.getElementById("hourInput1").value);
+  console.log("Valeur saisie pour l'heure:", hourInput1);
+  const minuteInput1 = Number(document.getElementById("minuteInput1").value);
 
-        // Réinitialiser les valeurs des champs
-      document.getElementById("hourInput1").value = '';
-      document.getElementById("minuteInput1").value = '';
-    
-      // Afficher le résultat
-      document.getElementById("resultInput1").textContent = resultText;
+  // Vérifier si les valeurs sont des nombres valides
+  if (isNaN(hourInput1) || isNaN(minuteInput1)) {
+    alert("Veuillez saisir un nombre.");
+    return; // Arrêter la fonction si les valeurs ne sont pas des nombres
   }
+
+  // Vérifier si les valeurs sont zéro
+  if (hourInput1 === 0 && minuteInput1 === 0) {
+    alert("Veuillez saisir au moins un nombre.");
+    return; // Arrêter la fonction si les valeurs sont zéro
+  }
+
+  // Calculer le total des minutes
+  const totalMinutes = hourInput1 * 60 + minuteInput1;
+
+  // Déterminer le texte en fonction de la condition
+  let resultText;
+  if (hourInput1 < 2) {
+    let firstSlice = slicedStringHourForInput1.slice(0, -1);
+    let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
+    resultText = `${hourInput1} ${firstSlice} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
+    slicedStringHourForInput1 = "heures"; // Réinitialiser la variable globale
+  } else if (minuteInput1 < 2) {
+    let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
+    resultText = `${hourInput1} ${slicedStringHourForInput1} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
+    slicedStringMinuteForInput1 = "minutes";  // Réinitialiser la variable globale
+  } else {
+    resultText = `${hourInput1} ${slicedStringHourForInput1} et ${minuteInput1} ${slicedStringMinuteForInput1} équivaut à ${totalMinutes} minutes.`;
+  }
+
+  // Réinitialiser les valeurs des champs
+  document.getElementById("hourInput1").value = '';
+  document.getElementById("minuteInput1").value = '';
+
+  // Afficher le résultat
+  document.getElementById("resultInput1").textContent = resultText;
+}
+
 
       
     function toConvertInput2() {
