@@ -212,7 +212,7 @@ function toConvertInput1() {
   if (hourInput1 < 2) {
     let slicedString = slicedStringForInput1.slice(0, -1);
     resultText = `${hourInput1} ${slicedString} et ${minuteInput1} minutes équivalent à ${totalMinutes} minutes.`;
-    slicedStringForInput1 = "minutes"; // Réinitialiser la variable globale
+    slicedStringForInput1 = "heures"; // Réinitialiser la variable globale
   } else {
     resultText = `${hourInput1} ${slicedStringForInput1} et ${minuteInput1} minutes équivalent à ${totalMinutes} minutes.`;
   }
