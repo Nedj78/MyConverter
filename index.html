@@ -215,13 +215,12 @@
       // Vérifier si les valeurs sont zéro
       if (hourInput1 === 0 && minuteInput1 === 0) {
         document.querySelector(".error").innerHTML = "Veuillez saisir au moins un nombre.";
+        // Réinitialiser ou masquer le dernier résultat text
+        document.getElementById("resultInput1").textContent = '';
         return; // Arrêter la fonction si les valeurs sont zéro
       } else {
         document.querySelector(".error").style.display = 'none';
       }
-      
-        // Réinitialiser ou masquer le dernier résultat text
-        document.getElementById("resultInput1").textContent = '';
     
       // Calculer le total des minutes
       const totalMinutes = hourInput1 * 60 + minuteInput1;
