@@ -199,7 +199,7 @@ function toConvertInput1() {
   const minuteInput1 = Number(document.getElementById("minuteInput1").value.trim());
 
   // Vérifier si les champs sont vides
-  if (hourInput1 === '' || minuteInput1 === '') {
+  if (hourInput1.trim() === '' || minuteInput1.trim() === '') {
     alert("Veuillez saisir des valeurs valides.");
     return; // Arrêter la fonction si l'input est vide
   }
