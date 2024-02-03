@@ -230,10 +230,6 @@
         let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
         resultText = `${hourInput1} ${firstSlice} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
         secondSlice = "heures"; // Réinitialiser la variable globale
-          if (minuteInput1 < 2) {
-            secondSlice = "minutes"; // Réinitialiser la variable globale
-            resultText = `${hourInput1} ${firstSlice} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
-          };
       } else if (minuteInput1 < 2) {
         let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
         resultText = `${hourInput1} ${slicedStringHourForInput1} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
