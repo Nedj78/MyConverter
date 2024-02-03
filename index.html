@@ -125,6 +125,10 @@
       font-family: "Walter Turncoat", cursive;
     }
 
+    .error {
+      color: red;
+    }
+
   </style>
 
     <h1>Convertisseur Heures > Minutes</h1>
@@ -132,6 +136,7 @@
     <input type="number" id="hourInput1" min="0">
     <label for="minutes">Minutes:</label>
     <input type="number" id="minuteInput1" min="0" max="59">
+    <div class="error"></div>
     <button class="button" id="convertBtn" onclick="toConvertInput1()">Convertir</button>
     <p id="resultInput1"></p>
 
@@ -208,7 +213,7 @@ function toConvertInput1() {
 
   // Vérifier si les valeurs sont zéro
   if (hourInput1 === 0 && minuteInput1 === 0) {
-    alert("Veuillez saisir au moins un nombre.");
+    document.querySelector(".error").innerHTML = "Veuillez saisir au moins un nombre.";
     return; // Arrêter la fonction si les valeurs sont zéro
   }
 
@@ -238,8 +243,6 @@ function toConvertInput1() {
   document.getElementById("resultInput1").textContent = resultText;
 }
 
-
-      
     function toConvertInput2() {
       const minuteInput2 = Number(document.getElementById("minuteInput2").value);
       const hourInput2 = Math.floor(minuteInput2 / 60);
