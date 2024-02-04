@@ -213,7 +213,7 @@
       const hours2 = Math.floor(minutes2 / 60);
 
       // Vérifier si au moins un nombre a été saisi
-      if (hours2 === 0 && minutes2 === 0) {
+      if (minutes2 === 0) {
         alert("Veuillez saisir au moins un nombre.");
         return;
       }
@@ -221,7 +221,6 @@
       const remainingMinutes = minutes2 % 60;
       document.getElementById("result2").textContent = `${minutes2} minute(s) équivaut à ${hours2} heure(s) et ${remainingMinutes} minute(s).`;
 
-      document.getElementById("hours2").value = '';
       document.getElementById("minutes2").value = '';
     }
 
