@@ -196,9 +196,6 @@
     
     <script>
 
-    let slicedStringHourForInput1 = "heures";
-    let slicedStringMinuteForInput1 = "minutes";
-
     function toConvertInput1() {
       // Récupérer les valeurs des champs et les convertir en nombres
       const hourInput1 = Number(document.getElementById("hourInput1").value);
@@ -226,16 +223,8 @@
       let resultText;
       if (hourInput1 < 2) {
         let firstSlice = slicedStringHourForInput1.slice(0, -1);
-        let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
-        resultText = `${hourInput1} ${firstSlice} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
-        secondSlice = "heures"; // Réinitialiser la variable globale
-      } else if (minuteInput1 < 2) {
-        let secondSlice = slicedStringMinuteForInput1.slice(0, -1);
-        resultText = `${hourInput1} ${slicedStringHourForInput1} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
-        secondSlice = "minutes";  // Réinitialiser la variable globale
-      } else {
-        resultText = `${hourInput1} ${slicedStringHourForInput1} et ${minuteInput1} ${secondSlice} équivaut à ${totalMinutes} minutes.`;
-      }
+        resultText = `${hourInput1} ${firstSlice} et ${minuteInput1} minute(e) équivaut à ${totalMinutes} minutes.`;
+      } 
 
       // Afficher le résultat
       document.getElementById("resultInput1").textContent = resultText;
