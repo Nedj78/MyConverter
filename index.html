@@ -193,17 +193,21 @@
       function convert1() {
         const hours1 = Number(document.getElementById("hours1").value);
         const minutes1 = Number(document.getElementById("minutes1").value);
-        const totalMinutes = hours1 * 60 + minutes1;
-        document.getElementById("result1").textContent = `${hours1} heures et ${minutes1} minutes équivaut à ${totalMinutes} minutes.`;
-
-        if ( (hours1 === 0 || (minutes1 === 0) ) {
-        alert("Veuillez saisir au moins un nombre");
-        return;
+      
+        // Vérifier si au moins un nombre a été saisi
+        if (hours1 === 0 && minutes1 === 0) {
+          alert("Veuillez saisir au moins un nombre.");
+          return;
         }
-
-        document.getElementById("hours1").textContent = '';
-        document.getElementById("minutes1").textContent = '';
+      
+        const totalMinutes = hours1 * 60 + minutes1;
+        document.getElementById("result1").textContent = `${hours1} heures et ${minutes1} minutes équivalent à ${totalMinutes} minutes.`;
+      
+        // Réinitialiser les valeurs des champs
+        document.getElementById("hours1").value = '';
+        document.getElementById("minutes1").value = '';
       }
+
 
 
 
