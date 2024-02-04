@@ -190,50 +190,30 @@
     </div>
 
     <script>
-      function convert1() {
-        const hours1 = Number(document.getElementById("hours1").value);
-        const minutes1 = Number(document.getElementById("minutes1").value);
-      
-        // Vérifier si au moins un nombre a été saisi
-        if (hours1 === 0 && minutes1 === 0) {
-          alert("Veuillez saisir au moins un nombre.");
-          return;
-        }
-      
-        const totalMinutes = hours1 * 60 + minutes1;
-        document.getElementById("result1").textContent = `${hours1} heures et ${minutes1} minutes équivalent à ${totalMinutes} minutes.`;
-      
-        // Réinitialiser les valeurs des champs
-        document.getElementById("hours1").value = '';
-        document.getElementById("minutes1").value = '';
-      }
-
-
-
-
+    function convert1() {
+      const hours1 = Number(document.getElementById("hours1").value);
+      const minutes1 = Number(document.getElementById("minutes1").value);
     
+      // Vérifier si au moins un nombre a été saisi
+      if (hours1 === 0 && minutes1 === 0) {
+        alert("Veuillez saisir au moins un nombre.");
+        return;
+      }
+    
+      const totalMinutes = hours1 * 60 + minutes1;
+      document.getElementById("result1").textContent = `${hours1} heures et ${minutes1} minutes équivalent à ${totalMinutes} minutes.`;
+    
+      // Réinitialiser les valeurs des champs
+      document.getElementById("hours1").value = '';
+      document.getElementById("minutes1").value = '';
+    }
 
-    // Ce code crée une page web qui permet aux utilisateurs de saisir le nombre d'heures et de minutes, 
-    //puis de cliquer sur un bouton pour convertir ces valeurs en minutes. 
-    //Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
-    //Le code utilise la méthode Number() pour convertir les chaînes de caractères des entrées en nombres, 
-    //puis calcule le total des minutes en multipliant le nombre d'heures par 60 et en ajoutant les minutes restantes. 
-    //Enfin, le résultat est affiché sur la page en utilisant la propriété textContent de l'élément cible.
-      
-        function convert2() {
-          const minutes2 = Number(document.getElementById("minutes2").value);
-          const hours2 = Math.floor(minutes2 / 60);
-          const remainingMinutes = minutes2 % 60;
-          document.getElementById("result2").textContent = `${minutes2} minutes équivaut à ${hours2} heures et ${remainingMinutes} minutes.`;
-        }
-      
-    //Ce code crée une page web qui permet aux utilisateurs de saisir le nombre de minutes, 
-    //puis de cliquer sur un bouton pour convertir cette valeur en heures et minutes. 
-    //Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
-    //Le code utilise la méthode Number() pour convertir la chaîne de caractères de l'entrée en un nombre, 
-    //puis divise ce nombre par 60 pour obtenir le nombre d'heures entières, et utilise l'opérateur modulo (%) 
-    //pour trouver les minutes restantes. Enfin, le résultat est affiché sur la page en utilisant la propriété 
-    //textContent de l'élément cible.
+    function convert2() {
+      const minutes2 = Number(document.getElementById("minutes2").value);
+      const hours2 = Math.floor(minutes2 / 60);
+      const remainingMinutes = minutes2 % 60;
+      document.getElementById("result2").textContent = `${minutes2} minutes équivaut à ${hours2} heures et ${remainingMinutes} minutes.`;
+    }
 
     function convert3() {
       const hours3 = Number(document.getElementById("hours3").value);
