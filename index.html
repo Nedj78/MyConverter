@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="./calculator.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./calculator.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./calculator.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/calculator (1).png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/calculator (1).png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/calculator (1).png">
     <link rel="manifest" href="/site.webmanifest">
     <title>Convertisseur Heures > Minutes</title>
   </head>
@@ -125,38 +125,33 @@
       font-family: "Walter Turncoat", cursive;
     }
 
-    .error {
-      color: red;
-    }
-
   </style>
 
     <h1>Convertisseur Heures > Minutes</h1>
     <label for="hours">Heures:</label>
-    <input type="number" id="hourInput1" min="0">
+    <input type="number" id="hours1" min="0">
     <label for="minutes">Minutes:</label>
-    <input type="number" id="minuteInput1" min="0" max="59">
-    <button class="button" id="convertBtn" onclick="toConvertInput1()">Convertir</button>
-    <div class="error"></div><br>
-    <p id="resultInput1"></p>
+    <input type="number" id="minutes1" min="0" max="59">
+    <button class="button" id="convertBtn" onclick="convert1()">Convertir</button>
+    <p id="result1"></p>
 
     <h1>Convertisseur Minutes > Heures</h1>
-    <label for="minuteInput2">Minutes:</label>
-    <input type="number" id="minuteInput2" min="0">
-    <button class="button" onclick="toConvertInput2()">Convertir</button>
-    <p id="resultInput2"></p>
+    <label for="minutes2">Minutes:</label>
+    <input type="number" id="minutes2" min="0">
+    <button class="button" onclick="convert2()">Convertir</button>
+    <p id="result2"></p>
 
     <h1>Convertisseur Heures > Jours</h1>
-    <label for="hourInput3">Heures:</label>
-    <input type="number" id="hourInput3" min="0">
-    <button class="button" onclick="toConvertInput3()">Convertir</button>
-    <p id="resultInput3"></p>
+    <label for="hours3">Heures:</label>
+    <input type="number" id="hours3" min="0">
+    <button class="button" onclick="convert3()">Convertir</button>
+    <p id="result3"></p>
 
     <h1>Convertisseur Jours > Heures</h1>
-    <label for="dayInput4">Jours:</label>
-    <input type="number" id="dayInput4" min="0">
-    <button class="button" onclick="toConvertInput4()">Convertir</button>
-    <p id="resultInput4"></p>
+    <label for="days4">Jours:</label>
+    <input type="number" id="days4" min="0">
+    <button class="button" onclick="convert4()">Convertir</button>
+    <p id="result4"></p>
 
     <h1>Calculatrice</h1>
     <div class="calculator">
@@ -193,142 +188,121 @@
       </div>
       <div class="scratch-pad"></div>
     </div>
-    
-   <script>
-     <script>
-  function toConvertInput1() {
-    // Récupérer les valeurs des champs et les convertir en nombres
-    const hourInput1 = Number(document.getElementById("hourInput1").value);
-    const minuteInput1 = Number(document.getElementById("minuteInput1").value);
-
-    // Vérifier si les valeurs sont des nombres valides
-    if (isNaN(hourInput1) || isNaN(minuteInput1)) {
-      alert("Veuillez saisir un nombre.");
-      return; // Arrêter la fonction si les valeurs ne sont pas des nombres
-    }
-
-    // Vérifier si les valeurs sont zéro
-    if (hourInput1 === 0 && minuteInput1 === 0) {
-      document.querySelector(".error").innerHTML = "Veuillez saisir au moins une valeur.";
-      document.querySelector(".error").style.display = 'block';
-      return; // Arrêter la fonction si les valeurs sont zéro
-    } else {
-      // Réinitialiser ou masquer le dernier résultat texte d'erreur
-      document.querySelector(".error").style.display = 'none';
-    }
-
-    // Calculer le total des minutes
-    const totalMinutes = hourInput1 * 60 + minuteInput1;
-
-    // Déterminer le texte en fonction de la condition
-    let resultText;
-    if (hourInput1 < 2) {
-      let firstSlice = "minute";
-      if (minuteInput1 !== 1) {
-        firstSlice += "s";
-      }
-      resultText = `${hourInput1} ${firstSlice} et ${minuteInput1} minute(s) équivaut à ${totalMinutes} minutes.`;
-    } else {
-      resultText = `${hourInput1} heures et ${minuteInput1} minute(s) équivaut à ${totalMinutes} minutes.`;
-    }
-
-    // Afficher le résultat
-    document.getElementById("resultInput2").textContent = resultText;
-
-    // Réinitialiser les valeurs des champs
-    document.getElementById("hourInput1").value = '';
-    document.getElementById("minuteInput1").value = '';
-  }
-</script>
-
-
-    function toConvertInput2() {
-      const minuteInput2 = Number(document.getElementById("minuteInput2").value);
-      const hourInput2 = Math.floor(minuteInput2 / 60);
-      const remainingMinutes = minuteInput2 % 60;
-      document.getElementById("resultInput2").textContent = `${minuteInput2} minute(s) équivaut à ${hourInput2} heur(e) et ${remainingMinutes} minute(s).`;
-    }
-      
-    function toConvertInput3() {
-      const hourInput3 = Number(document.getElementById("hourInput3").value);
-      const totalDays = Math.floor(hourInput3 / 24);
-      const remainingHours = hourInput3 % 24;
-      document.getElementById("resultInput3").textContent = `${hourInput3} heure(s) équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
-    }
-    
-    function toConvertInput4() {
-      const dayInput4 = Number(document.getElementById("dayInput4").value);
-      const totalHours = dayInput4 * 24;
-      document.getElementById("resultInput4").textContent = `${dayInput4} jour(s) équivaut à ${totalHours} heures.`;
-    }
-
-    </script>
 
     <script>
-      
-    let display = document.querySelector('.display');
-    let scratchPad = document.querySelector('.scratch-pad');
-    let scratchPadText = [];
-    let lastResult = null;
-    
-    function appendToDisplay(value) {
-      if (lastResult !== null) {
-        display.innerHTML = '';
-        lastResult = null;
+      function convert1() {
+        const hours1 = Number(document.getElementById("hours1").value);
+        const minutes1 = Number(document.getElementById("minutes1").value);
+        const totalMinutes = hours1 * 60 + minutes1;
+        document.getElementById("result1").textContent = `${hours1}heures et ${minutes1} minutes équivaut à ${totalMinutes} minutes.`;
       }
-      display.innerHTML += value;
-      updateScratchPad();
-    }
-    
-    function clearDisplay() {
-      display.innerHTML = '';
-      scratchPadText = [];
-      updateScratchPad();
-    }
-    
-    function backspace() {
-      display.innerHTML = display.innerHTML.slice(0, -1);
-      updateScratchPad();
-    }
-    
-    function percentage() {
-      let expression = display.innerHTML;
-      let result = eval(expression) / 100;
-      display.innerHTML = result;
-      scratchPadText.push(expression + '% = ' + result);
-      updateScratchPad();
-    }
-    
-    function calculate() {
-      let expression = display.innerHTML;
-      let result = eval(expression);
-      display.innerHTML = result;
-      if (lastResult === null) {
-        scratchPadText.push(expression + ' = ' + result);
-      } else {
-        scratchPadText.push(lastResult + ' ' + expression + ' = ' + result);
-      }
-      lastResult = result;
-      updateScratchPad();
-    }
-    
-    function updateScratchPad() {
-      let scratchPadHTML = '<h2>Tableau de brouillon</h2><br>';
-      scratchPadText.forEach(function (item) {
-        scratchPadHTML += '<br>' + '<p>' + item + '</p>' + '<br>';
-      });
-      scratchPad.innerHTML = scratchPadHTML;
-    }
-    
-    //scratchPadText est maintenant un tableau qui stocke les opérations de calcul et les résultats séparément.
-    //Lorsque l'utilisateur saisit une opération de calcul, nous ajoutons cette opération au dernier élément du tableau.
-    //Lorsque l'utilisateur clique sur le bouton "=", nous ajoutons l'opération et le résultat dans un nouvel élément du tableau.
-    //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat)
-    //dans un paragraphe HTML séparé. Ainsi, chaque opération de calcul et chaque résultat apparaissent sur une ligne séparée dans la table de brouillon.
-      
 
-  </script>
-  
+    <!-- Ce code crée une page web qui permet aux utilisateurs de saisir le nombre d'heures et de minutes, 
+    puis de cliquer sur un bouton pour convertir ces valeurs en minutes. 
+    Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
+    Le code utilise la méthode Number() pour convertir les chaînes de caractères des entrées en nombres, 
+    puis calcule le total des minutes en multipliant le nombre d'heures par 60 et en ajoutant les minutes restantes. 
+    Enfin, le résultat est affiché sur la page en utilisant la propriété textContent de l'élément cible.      
+    -->
+        function convert2() {
+          const minutes2 = Number(document.getElementById("minutes2").value);
+          const hours2 = Math.floor(minutes2 / 60);
+          const remainingMinutes = minutes2 % 60;
+          document.getElementById("result2").textContent = `${minutes2} minutes équivaut à ${hours2} heures et ${remainingMinutes} minutes.`;
+        }
+    //Ce code crée une page web qui permet aux utilisateurs de saisir le nombre de minutes, 
+    //puis de cliquer sur un bouton pour convertir cette valeur en heures et minutes. 
+    //Le résultat de la conversion est affiché sous forme de texte dans une balise <p> sur la page.
+    //Le code utilise la méthode Number() pour convertir la chaîne de caractères de l'entrée en un nombre, 
+    //puis divise ce nombre par 60 pour obtenir le nombre d'heures entières, et utilise l'opérateur modulo (%) 
+    //pour trouver les minutes restantes. Enfin, le résultat est affiché sur la page en utilisant la propriété 
+    //textContent de l'élément cible.
+
+    function convert3() {
+      const hours3 = Number(document.getElementById("hours3").value);
+      const totalDays = Math.floor(hours3 / 24);
+      const remainingHours = hours3 % 24;
+      document.getElementById("result3").textContent = `${hours3} heures équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
+    }
+
+    function convert4() {
+      const days4 = Number(document.getElementById("days4").value);
+      const totalHours = days4 * 24;
+      document.getElementById("result4").textContent = `${days4} jour(s) équivaut à ${totalHours} heures.`;
+    }
+
+    let display = document.querySelector('.display');
+      let scratchPad = document.querySelector('.scratch-pad');
+      let scratchPadText = [];
+      let lastResult = null;
+
+      function appendToDisplay(value) {
+        if (lastResult !== null) {
+          display.innerHTML = '';
+          lastResult = null;
+        }
+        display.innerHTML += value;
+        updateScratchPad();
+      }
+
+      function clearDisplay() {
+        display.innerHTML = '';
+        scratchPadText = [];
+        updateScratchPad();
+      }
+
+      function backspace() {
+        display.innerHTML = display.innerHTML.slice(0, -1);
+        updateScratchPad();
+      }
+
+      function percentage() {
+        let expression = display.innerHTML;
+        let result = eval(expression) / 100;
+        display.innerHTML = result;
+        scratchPadText.push(expression + '% = ' + result); // Ajouter le calcul et le résultat dans le tableau
+        updateScratchPad();
+      }
+
+      function calculate() {
+        let expression = display.innerHTML;
+        let result = eval(expression);
+        display.innerHTML = result;
+        if (lastResult === null) {
+          scratchPadText.push(expression + ' = ' + result);
+        } else {
+          scratchPadText.push(lastResult + ' ' + expression + ' = ' + result);
+        }
+        lastResult = result;
+        updateScratchPad();
+      }
+
+      function updateScratchPad() {
+        let scratchPadHTML = '<h2>Tableau de brouillon</h2>';
+        scratchPadText.forEach(function(item) {
+          scratchPadHTML += '<br>' + '<p>' + item + '</p>' + '<br>';
+        });
+        scratchPad.innerHTML = scratchPadHTML;
+      }
+
+      //scratchPadText est maintenant un tableau qui stocke les opérations de calcul et les résultats séparément. 
+      //Lorsque l'utilisateur saisit une opération de calcul, nous ajoutons cette opération au dernier élément du tableau. 
+      //Lorsque l'utilisateur clique sur le bouton "=", nous ajoutons l'opération et le résultat dans un nouvel élément du tableau.
+      //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat) 
+      //dans un paragraphe HTML séparé. Ainsi, chaque opération de calcul et chaque résultat apparaissent sur une ligne séparée dans la table de brouillon.
+
+      const input = document.getElementById("minute1", "minute2");
+      const btn = document.getElementById('convertBtn');
+
+      // Ajouter un écouteur d'événements pour la touche Entrée sur le champ d'entrée
+      input.addEventListener('keydown', function(event) {
+        if (event.keyCode === 13) { // Si la touche appuyée est Entrée
+          event.preventDefault(); // Empêcher le comportement par défaut de la touche Entrée sur le champ d'entrée (soumission du formulaire)
+          convert(); // Appeler la fonction de conversion
+        }
+      });
+
+    </script>
 
   </body>
 </html>
