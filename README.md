@@ -1,3 +1,3 @@
-# appconvertor
+# Time converter
 # calculator
 
