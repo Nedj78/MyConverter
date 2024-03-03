@@ -8,5 +8,7 @@ __Framework__: No
  
 __Project__: converts times and performs calculations.
 
-__Server__: No
+__Backend host server__: No
+
+__Frontend host server__: Jekyll (Github pages)
 
