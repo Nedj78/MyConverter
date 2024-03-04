@@ -1,7 +1,7 @@
     function convert1() {
       const hours1 = Number(document.getElementById("hours1").value);
       const minutes1 = Number(document.getElementById("minutes1").value);
-    
+     
       if (hours1 === 0 && minutes1 === 0) {
         alert("Veuillez saisir au moins un nombre.");
         return;
