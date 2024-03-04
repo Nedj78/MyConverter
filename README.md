@@ -3,7 +3,7 @@ __Description__: personal project meeting the need for easier calculation when w
 __Stack__ : html/css/javascript
 
 __Responsiveness__: medium and wide screens.
-
+ 
 __Framework__: no
  
 __Project__: converts times and performs calculations.
