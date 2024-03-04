@@ -59,7 +59,7 @@
 
     }
 
-    let display = document.querySelector('.display');
+      let display = document.querySelector('.display');
       let scratchPad = document.querySelector('.scratch-pad');
       let scratchPadText = [];
       let lastResult = null;
@@ -113,12 +113,14 @@
         scratchPad.innerHTML = scratchPadHTML;
       }
 
-      const input = document.getElementById("minute1", "minute2");
-      const btn = document.getElementById('convertBtn');
-
+     const inputs = document.querySelectorAll("#minute1, #minute2");
+     const btn = document.getElementById('convertBtn');
+    
+     inputs.forEach(input => {
       input.addEventListener('keydown', function(event) {
-        if (event.keyCode === 13) { /=
-          event.preventDefault(); =
-          convert(); 
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          convert1();
         }
       });
+    });
