@@ -124,7 +124,6 @@
       float: left;
       font-family: "Walter Turncoat", cursive;
     }
-
   </style>
 
     <h1>Convertisseur Heures > Minutes</h1>
@@ -194,7 +193,6 @@
       const hours1 = Number(document.getElementById("hours1").value);
       const minutes1 = Number(document.getElementById("minutes1").value);
     
-      // Vérifier si au moins un nombre a été saisi
       if (hours1 === 0 && minutes1 === 0) {
         alert("Veuillez saisir au moins un nombre.");
         return;
@@ -203,7 +201,6 @@
       const totalMinutes = hours1 * 60 + minutes1;
       document.getElementById("result1").textContent = `${hours1} heure(s) et ${minutes1} minute(s) équivalent à ${totalMinutes} minute(s).`;
     
-      // Réinitialiser les valeurs des champs
       document.getElementById("hours1").value = '';
       document.getElementById("minutes1").value = '';
     }
@@ -212,7 +209,6 @@
       const minutes2 = Number(document.getElementById("minutes2").value);
       const hours2 = Math.floor(minutes2 / 60);
 
-      // Vérifier si au moins un nombre a été saisi
       if (minutes2 === 0) {
         alert("Veuillez saisir au moins un nombre.");
         return;
@@ -228,7 +224,6 @@
       const hours3 = Number(document.getElementById("hours3").value);
       const totalDays = Math.floor(hours3 / 24);
 
-      // Vérifier si au moins un nombre a été saisi
       if (hours3 === 0) {
         alert("Veuillez saisir au moins un nombre.");
         return;
@@ -243,7 +238,6 @@
     function convert4() {
       const days4 = Number(document.getElementById("days4").value);
       
-      // Vérifier si au moins un nombre a été saisi
       if (days4 === 0) {
         alert("Veuillez saisir au moins un nombre.");
         return;
@@ -287,7 +281,7 @@
         let expression = display.innerHTML;
         let result = eval(expression) / 100;
         display.innerHTML = result;
-        scratchPadText.push(expression + '% = ' + result); // Ajouter le calcul et le résultat dans le tableau
+        scratchPadText.push(expression + '% = ' + result); 
         updateScratchPad();
       }
 
@@ -312,20 +306,13 @@
         scratchPad.innerHTML = scratchPadHTML;
       }
 
-      //scratchPadText est maintenant un tableau qui stocke les opérations de calcul et les résultats séparément. 
-      //Lorsque l'utilisateur saisit une opération de calcul, nous ajoutons cette opération au dernier élément du tableau. 
-      //Lorsque l'utilisateur clique sur le bouton "=", nous ajoutons l'opération et le résultat dans un nouvel élément du tableau.
-      //La fonction updateScratchPad() a été modifiée pour itérer sur le tableau et ajouter chaque élément (opération de calcul ou résultat) 
-      //dans un paragraphe HTML séparé. Ainsi, chaque opération de calcul et chaque résultat apparaissent sur une ligne séparée dans la table de brouillon.
-
       const input = document.getElementById("minute1", "minute2");
       const btn = document.getElementById('convertBtn');
 
-      // Ajouter un écouteur d'événements pour la touche Entrée sur le champ d'entrée
       input.addEventListener('keydown', function(event) {
-        if (event.keyCode === 13) { // Si la touche appuyée est Entrée
-          event.preventDefault(); // Empêcher le comportement par défaut de la touche Entrée sur le champ d'entrée (soumission du formulaire)
-          convert(); // Appeler la fonction de conversion
+        if (event.keyCode === 13) { /=
+          event.preventDefault(); =
+          convert(); 
         }
       });
 
