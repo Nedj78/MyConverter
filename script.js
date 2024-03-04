@@ -1,39 +1,62 @@
-function convert(inputId, unit1, unit2, resultId, conversionFactor) {
-    const input = Number(document.getElementById(inputId).value);
-
-    if (input === 0 || isNaN(input)) {
-        alert("Veuillez saisir un nombre valide supérieur à zéro.");
+function convert1() {
+      const hours1 = Number(document.getElementById("hours1").value);
+      const minutes1 = Number(document.getElementById("minutes1").value);
+     
+      if (hours1 === 0 && minutes1 === 0) {
+        alert("Veuillez saisir au moins un nombre.");
         return;
+      }
+    
+      const totalMinutes = hours1 * 60 + minutes1;
+      document.getElementById("result1").textContent = `${hours1} heure(s) et ${minutes1} minute(s) équivalent à ${totalMinutes} minute(s).`;
+    
+      document.getElementById("hours1").value = '';
+      document.getElementById("minutes1").value = '';
     }
 
-    const result1 = Math.floor(input * conversionFactor);
-    const result2 = input % unit1;
+    function convert2() {
+      const minutes2 = Number(document.getElementById("minutes2").value);
+      const hours2 = Math.floor(minutes2 / 60);
 
-    document.getElementById(resultId).textContent = `${input} ${unit1}(s) équivaut à ${result1} ${unit2}(s) et ${result2} ${unit1}(s).`;
-    document.getElementById(inputId).value = '';
-}
+      if (minutes2 === 0) {
+        alert("Veuillez saisir au moins un nombre.");
+        return;
+      }
+      
+      const remainingMinutes = minutes2 % 60;
+      document.getElementById("result2").textContent = `${minutes2} minute(s) équivaut à ${hours2} heure(s) et ${remainingMinutes} minute(s).`;
 
-function clearInput(inputId) {
-    document.getElementById(inputId).value = '';
-}
+      document.getElementById("minutes2").value = '';
+    }
 
-function setupConversionListeners(inputId, unit1, unit2, resultId, conversionFactor) {
-    const input = document.getElementById(inputId);
-    input.addEventListener('keydown', function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            convert(inputId, unit1, unit2, resultId, conversionFactor);
-        }
-    });
-}
+    function convert3() {
+      const hours3 = Number(document.getElementById("hours3").value);
+      const totalDays = Math.floor(hours3 / 24);
 
-setupConversionListeners("hours1", "heure", "minute", "result1", 60);
+      if (hours3 === 0) {
+        alert("Veuillez saisir au moins un nombre.");
+        return;
+      }
+      
+      const remainingHours = hours3 % 24;
+      document.getElementById("result3").textContent = `${hours3} heure(s) équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
 
-setupConversionListeners("minutes2", "minute", "heure", "result2", 1/60);
+      document.getElementById("hours3").value = '';
+    }
 
-setupConversionListeners("hours3", "heure", "jour", "result3", 1/24);
+    function convert4() {
+      const days4 = Number(document.getElementById("days4").value);
+      
+      if (days4 === 0) {
+        alert("Veuillez saisir au moins un nombre.");
+        return;
+      }
+      
+      const totalHours = days4 * 24;
+      document.getElementById("result4").textContent = `${days4} jour(s) équivaut à ${totalHours} heure(s).`;
 
-setupConversionListeners("days4", "jour", "heure", "result4", 24);
+      document.getElementById("days4").value = '';
+    }
 
 // ------------------------------------------------------------------
 
