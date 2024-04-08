@@ -111,6 +111,28 @@
       font-family: "Walter Turncoat", cursive;
     }
 
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    html {
+      font-size: 16pt;
+    }
+  
+    .button {
+      inline-size: 100px;
+    }
+  
+    .calculator {
+      max-width: 400px;
+    }
+  
+    .display {
+      font-size: 28px;
+    }
+  
+    .buttoncalculator {
+      font-size: 24px;
+    }
+  }
+
 /* Media queries pour les écrans de taille moyenne */
 @media screen and (max-width: 768px) {
   html {
@@ -134,8 +156,8 @@
   }
 }
 
-/* Media queries pour les écrans plus petits */
-@media screen and (max-width: 480px) {
+/* Media queries pour les écrans de petite taille */
+@media screen and (max-width: 360px) {
   html {
     font-size: 12pt;
   }
@@ -149,7 +171,7 @@
   }
 
   .display {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .buttoncalculator {
