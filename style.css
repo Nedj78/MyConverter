@@ -110,3 +110,49 @@
       float: left;
       font-family: "Walter Turncoat", cursive;
     }
+
+/* Media queries pour les écrans de taille moyenne */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14pt;
+  }
+
+  .button {
+    inline-size: 80px;
+  }
+
+  .calculator {
+    max-width: 300px;
+  }
+
+  .display {
+    font-size: 24px;
+  }
+
+  .buttoncalculator {
+    font-size: 20px;
+  }
+}
+
+/* Media queries pour les écrans plus petits */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 12pt;
+  }
+
+  .button {
+    inline-size: 60px;
+  }
+
+  .calculator {
+    max-width: 200px;
+  }
+
+  .display {
+    font-size: 20px;
+  }
+
+  .buttoncalculator {
+    font-size: 16px;
+  }
+}
