@@ -5,6 +5,7 @@
       font-size: 15pt;
       padding: 80px;
       overflow-x: hidden;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
   .button {
@@ -108,7 +109,7 @@
     font-size: 14px;
     margin: 15px 0 0 0;
     float: left;
-    font-family: "Walter Turncoat", cursive;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
   }
 
 @media screen and (min-width: 769px) and (max-width: 1200px) {
@@ -151,12 +152,20 @@
     font-size: 24px;
   }
 
+  .button-row {
+    flex-wrap: wrap;
+  }
+
   .buttoncalculator {
+    font-size: 18px;
+  }
+
+  h1 {
     font-size: 20px;
   }
 }
 
-/* Media queries pour les écrans de petite taille */
+/* Media queries pour les écrans de petite taille (par exemple iPhone SE) */
 @media screen and (max-width: 360px) {
   html {
     font-size: 12pt;
@@ -175,6 +184,10 @@
   }
 
   .buttoncalculator {
-    font-size: 16px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 18px;
   }
 }
