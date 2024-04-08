@@ -111,27 +111,27 @@
       font-family: "Walter Turncoat", cursive;
     }
 
-  @media screen and (min-width: 769px) and (max-width: 1200px) {
-    html {
-      font-size: 16pt;
-    }
-  
-    .button {
-      inline-size: 100px;
-    }
-  
-    .calculator {
-      max-width: 400px;
-    }
-  
-    .display {
-      font-size: 28px;
-    }
-  
-    .buttoncalculator {
-      font-size: 24px;
-    }
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  html {
+    font-size: 16pt;
   }
+
+  .button {
+    inline-size: 100px;
+  }
+
+  .calculator {
+    max-width: 400px;
+  }
+
+  .display {
+    font-size: 28px;
+  }
+
+  .buttoncalculator {
+    font-size: 24px;
+  }
+}
 
 /* Media queries pour les écrans de taille moyenne */
 @media screen and (max-width: 768px) {
