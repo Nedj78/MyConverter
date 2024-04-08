@@ -122,11 +122,12 @@
   }
 
   .button {
+    margin-top: 10px;
     inline-size: 120px;
   }
 
   .calculator {
-    max-width: 400px;
+    max-width: 600px;
   }
 
   .display {
@@ -149,11 +150,12 @@
   }
 
   .button {
-    inline-size: 80px;
+    margin-top: 10px;
+    inline-size: 120px;
   }
 
   .calculator {
-    max-width: 300px;
+    max-width: 400px;
   }
 
   .display {
@@ -184,11 +186,12 @@
   }
 
   .button {
-    inline-size: 80px;
+    margin-top: 10px;
+    inline-size: 120px;
   }
 
   .calculator {
-    max-width: 200px;
+    max-width: 300px;
   }
 
   .display {
