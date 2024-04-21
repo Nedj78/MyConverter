@@ -10,5 +10,6 @@ __Project__: converts times and performs calculations.
 
 __Backend host server__: no
 
-__Frontend host server__: jekyll (Github pages)
-
+__Frontend host servers__: 
+- jekyll (Github pages)
+- now (Vercel platform)
