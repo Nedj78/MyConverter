@@ -12,4 +12,4 @@ __Backend host server__: no
 
 __Frontend host servers__: 
 - jekyll (Github pages)
-- now (Vercel platform)
+- [now (Vercel platform)](https://my-prayer-clock.versel.app/)
