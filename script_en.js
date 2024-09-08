@@ -44,6 +44,23 @@ function convert1() {
       document.getElementById("hours3").value = '';
     }
 
+    function convert3Workdays() {
+      const hours3Bis = Number(document.getElementById("hours3-bis").value);
+  
+      if (hours3Bis === 0) {
+          alert("Please enter at least one number.");
+          return;
+      }
+  
+      const hoursPerDay = 7; 
+      const totalDays = Math.floor(hours3Bis / hoursPerDay);
+      const remainingHours = hours3Bis % hoursPerDay;
+  
+      document.getElementById("resultWorkingDays").textContent = `${hours3Bis} hour(s) equal(s) ${totalDays} business day(s) and ${remainingHours} hour(s).`;
+  
+      document.getElementById("hours3-bis").value = '';
+  }
+
     function convert4() {
       const days4 = Number(document.getElementById("days4").value);
       
@@ -56,6 +73,34 @@ function convert1() {
       document.getElementById("result4").textContent = `${days4} day(s) equal(s) ${totalHours} hour(s).`;
 
       document.getElementById("days4").value = '';
+    }
+
+    function convert5() {
+      const hours5 = Number(document.getElementById("hours5").value);
+      
+      if (hours5 === 0) {
+        alert("Please enter at least one number.");
+        return;
+      }
+      
+      const totalMonths = hours5 / 730;
+      document.getElementById("result5").textContent = `${hours5} hour(s) equal(s) ${totalMonths} month(s).`;
+
+      document.getElementById("hours5").value = '';
+    }
+
+    function convert6() {
+      const hours6 = Number(document.getElementById("hours6").value);
+      
+      if (hours6 === 0) {
+        alert("Please enter at least one number.");
+        return;
+      }
+      
+      const totalMonths2 = hours6 / 176;
+      document.getElementById("result6").textContent = `${hours6} hour(s) equal(s) ${totalMonths2} month(s).`;
+
+      document.getElementById("hours6").value = '';
     }
 
 // ------------------------------------------------------------------
