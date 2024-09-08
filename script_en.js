@@ -39,7 +39,7 @@ function convert1() {
       }
       
       const remainingHours = hours3 % 24;
-      document.getElementById("result3").textContent = `${hours3} hour(s) equal(s) ${totalDays} day(s) and ${remainingHours} heure(s).`;
+      document.getElementById("result3").textContent = `${hours3} hour(s) equal(s) ${totalDays} day(s) and ${remainingHours} hour(s).`;
 
       document.getElementById("hours3").value = '';
     }

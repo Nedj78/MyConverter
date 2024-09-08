@@ -22,6 +22,10 @@
       box-sizing: border-box; /* Inclure le padding dans la largeur */
   }
 
+  h1 {
+    padding: 40px 0 0 0;
+  }
+
   .button {
       background-color: rgba(244, 147, 56, 0.366);
       border-radius: 8px;
@@ -217,7 +221,8 @@
 
   .button {
     margin-top: 10px;
-    inline-size: 100px; 
+    inline-size: 100px;
+    border-color:  black; 
   }
 
   .display {
