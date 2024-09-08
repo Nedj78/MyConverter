@@ -3,12 +3,12 @@ function convert1() {
       const minutes1 = Number(document.getElementById("minutes1").value);
      
       if (hours1 === 0 && minutes1 === 0) {
-        alert("Veuillez saisir au moins un nombre.");
+        alert("Please enter at least one number.");
         return;
       }
     
       const totalMinutes = hours1 * 60 + minutes1;
-      document.getElementById("result1").textContent = `${hours1} heure(s) et ${minutes1} minute(s) équivalent à ${totalMinutes} minute(s).`;
+      document.getElementById("result1").textContent = `${hours1} hour(s) and ${minutes1} minute(s) equal(s) ${totalMinutes} minute(s).`;
     
       document.getElementById("hours1").value = '';
       document.getElementById("minutes1").value = '';
@@ -19,12 +19,12 @@ function convert1() {
       const hours2 = Math.floor(minutes2 / 60);
 
       if (minutes2 === 0) {
-        alert("Veuillez saisir au moins un nombre.");
+        alert("Please enter at least one number.");
         return;
       }
       
       const remainingMinutes = minutes2 % 60;
-      document.getElementById("result2").textContent = `${minutes2} minute(s) équivaut à ${hours2} heure(s) et ${remainingMinutes} minute(s).`;
+      document.getElementById("result2").textContent = `${minutes2} minute(s) equal(s) ${hours2} hour(s) and ${remainingMinutes} minute(s).`;
 
       document.getElementById("minutes2").value = '';
     }
@@ -34,12 +34,12 @@ function convert1() {
       const totalDays = Math.floor(hours3 / 24);
 
       if (hours3 === 0) {
-        alert("Veuillez saisir au moins un nombre.");
+        alert("Please enter at least one number.");
         return;
       }
       
       const remainingHours = hours3 % 24;
-      document.getElementById("result3").textContent = `${hours3} heure(s) équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
+      document.getElementById("result3").textContent = `${hours3} hour(s) equal(s) ${totalDays} day(s) and ${remainingHours} heure(s).`;
 
       document.getElementById("hours3").value = '';
     }
@@ -48,12 +48,12 @@ function convert1() {
       const days4 = Number(document.getElementById("days4").value);
       
       if (days4 === 0) {
-        alert("Veuillez saisir au moins un nombre.");
+        alert("Please enter at least one number.");
         return;
       }
       
       const totalHours = days4 * 24;
-      document.getElementById("result4").textContent = `${days4} jour(s) équivaut à ${totalHours} heure(s).`;
+      document.getElementById("result4").textContent = `${days4} day(s) equal(s) ${totalHours} hour(s).`;
 
       document.getElementById("days4").value = '';
     }
@@ -107,7 +107,7 @@ function convert1() {
       }
 
       function updateScratchPad() {
-        let scratchPadHTML = '<h2>Tableau de brouillon</h2>';
+        let scratchPadHTML = '<h2>Draft board</h2><br>';
         scratchPadText.forEach(function(item) {
           scratchPadHTML += '<br>' + '<p>' + item + '</p>' + '<br>';
         });

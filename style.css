@@ -3,9 +3,23 @@
       background-color: rgba(255, 192, 203, 0.683);
       color: black;
       font-size: 15pt;
-      padding: 80px;
       overflow-x: hidden;
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+  html, body {
+      margin: 0; /* Supprime toute marge par défaut */
+      padding: 0; /* Supprime tout padding par défaut */
+      width: 100%; /* Assurer que le body prend toute la largeur de l'écran */
+      height: 100%; /* Prendre toute la hauteur de l'écran */
+      box-sizing: border-box; /* Assurer que le padding est inclus dans la largeur totale */
+    }
+
+  #main-content {
+      margin: 0 auto; /* Centrer le contenu */
+      padding: 20px; /* Un peu de marge interne */
+      width: 100%; /* Prendre toute la largeur disponible */
+      box-sizing: border-box; /* Inclure le padding dans la largeur */
   }
 
   .button {
@@ -112,6 +126,11 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
   }
 
+  .external-link {
+    font-size: 12pt;
+    padding: 10px;
+  }
+
 @media screen and (min-width: 769px) and (max-width: 1200px) {
   html {
     font-size: 16pt;
@@ -145,8 +164,9 @@
     font-size: 14pt;
   }
 
-  body {
+  #main-content {
     width: 100%;
+    padding: 15px; 
   }
 
   .button {
@@ -175,6 +195,7 @@
   }
 }
 
+
 /* Media queries pour les écrans de petite taille (par exemple iPhone SE) */
 @media screen and (max-width: 360px) {
   html {
@@ -183,26 +204,31 @@
 
   body {
     width: 100%;
+    padding: 0; 
+  }
+
+  #main-content {
+    padding: 10px; 
+  }
+
+  .calculator {
+    max-width: 300px; 
   }
 
   .button {
     margin-top: 10px;
-    inline-size: 120px;
-  }
-
-  .calculator {
-    max-width: 300px;
+    inline-size: 100px; 
   }
 
   .display {
-    font-size: 18px;
+    font-size: 18px; 
   }
 
   .buttoncalculator {
-    font-size: 14px;
+    font-size: 14px; 
   }
 
   h1 {
-    font-size: 18px;
+    font-size: 18px; 
   }
 }
