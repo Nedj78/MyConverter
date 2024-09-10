@@ -56,11 +56,11 @@ function convert1() {
       const totalDays = Math.floor(hours3Bis / hoursPerDay);
       const remainingHours = hours3Bis % hoursPerDay;
   
-      document.getElementById("resultWorkingDays").textContent = `${hours3Bis} hour(s) equal(s) ${totalDays} business day(s) and ${remainingHours} hour(s).`;
+      document.getElementById("result3WorkingDays").textContent = `${hours3Bis} hour(s) equal(s) ${totalDays} business day(s) and ${remainingHours} hour(s).`;
   
       document.getElementById("hours3-bis").value = '';
   }
-
+    
     function convert4() {
       const days4 = Number(document.getElementById("days4").value);
       
@@ -73,6 +73,22 @@ function convert1() {
       document.getElementById("result4").textContent = `${days4} day(s) equal(s) ${totalHours} hour(s).`;
 
       document.getElementById("days4").value = '';
+    }
+    
+    function convert4WorkDays() {
+      const days4bis = Number(document.getElementById("days4-bis").value);
+      
+      if (days4bis === 0) {
+        alert("Please enter at least one number.");
+        return;
+      }
+    
+      const hoursPerWorkday = 7;
+      const totalHours = days4bis * hoursPerWorkday;
+      
+      document.getElementById("result4WorkDays").textContent = `${days4bis} day(s) equal(s) ${totalHours} hour(s).`;
+    
+      document.getElementById("days4-bis").value = '';
     }
 
     function convert5() {

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="180x180" href="images/calculator-img.png">
+    <link rel="icon" type="image/png" href="images/calculator-img.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/calculator-img.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/calculator-img.png">
     <link rel="manifest" href="/site.webmanifest">
@@ -36,13 +37,19 @@
       <label for="hours3-bis">Heures:</label>
       <input type="number" id="hours3-bis" min="0">
       <button class="button" onclick="convert3Workdays()">Convertir</button>
-      <p id="resultWorkingDays"></p>
+      <p id="result3WorkingDays"></p>
 
       <h1>Jours → Heures</h1>
       <label for="days4">Jours:</label>
       <input type="number" id="days4" min="0">
       <button class="button" onclick="convert4()">Convertir</button>
       <p id="result4"></p>
+
+      <h1>Jours ouvrés → Heures</h1>
+      <label for="days4-bis">Jours:</label>
+      <input type="number" id="days4-bis" min="0">
+      <button class="button" onclick="convert4WorkDays()">Convertir</button>
+      <p id="result4WorkDays"></p>
 
       <h1>Heures → Mois <span>(selon 30 jours)</span></h1>
       <label for="hours5">Heures:</label>

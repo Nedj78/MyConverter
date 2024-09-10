@@ -8,7 +8,7 @@ function convert1() {
       }
     
       const totalMinutes = hours1 * 60 + minutes1;
-      document.getElementById("result1").textContent = `${hours1} heure(s) et ${minutes1} minute(s) équivalent à ${totalMinutes} minute(s).`;
+      document.getElementById("result1").textContent = `${hours1} heure(s) et ${minutes1} minute(s) correspond(ent) à ${totalMinutes} minute(s).`;
     
       document.getElementById("hours1").value = '';
       document.getElementById("minutes1").value = '';
@@ -24,7 +24,7 @@ function convert1() {
       }
       
       const remainingMinutes = minutes2 % 60;
-      document.getElementById("result2").textContent = `${minutes2} minute(s) équivaut à ${hours2} heure(s) et ${remainingMinutes} minute(s).`;
+      document.getElementById("result2").textContent = `${minutes2} minute(s) correspond(ent) à ${hours2} heure(s) et ${remainingMinutes} minute(s).`;
 
       document.getElementById("minutes2").value = '';
     }
@@ -39,7 +39,7 @@ function convert1() {
       }
       
       const remainingHours = hours3 % 24;
-      document.getElementById("result3").textContent = `${hours3} heure(s) équivaut à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
+      document.getElementById("result3").textContent = `${hours3} heure(s) correspond(ent) à ${totalDays} jour(s) et ${remainingHours} heure(s).`;
 
       document.getElementById("hours3").value = '';
     }
@@ -56,7 +56,7 @@ function convert1() {
       const totalDays = Math.floor(hours3 / hoursPerDay);
       const remainingHours = hours3 % hoursPerDay;
   
-      document.getElementById("resultWorkingDays").textContent = `${hours3} heure(s) équivaut à ${totalDays} jour(s) ouvré(s) et ${remainingHours} heure(s).`;
+      document.getElementById("result3WorkingDays").textContent = `${hours3} heure(s) correspond(ent) à ${totalDays} jour(s) ouvré(s) et ${remainingHours} heure(s).`;
   
       document.getElementById("hours3-bis").value = '';
   }
@@ -70,11 +70,26 @@ function convert1() {
       }
       
       const totalHours = days4 * 24;
-      document.getElementById("result4").textContent = `${days4} jour(s) équivaut à ${totalHours} heure(s).`;
+      document.getElementById("result4").textContent = `${days4} jour(s) correspond(ent) à ${totalHours} heure(s).`;
 
       document.getElementById("days4").value = '';
     }
 
+    function convert4WorkDays() {
+      const days4bis = Number(document.getElementById("days4-bis").value);
+      
+      if (days4bis === 0) {
+        alert("Please enter at least one number.");
+        return;
+      }
+    
+      const hoursPerWorkday = 7;
+      const totalHours = days4bis * hoursPerWorkday;
+      
+      document.getElementById("result4WorkDays").textContent = `${days4bis} jour(s) ouvré(s) correspond(ent) à ${totalHours} heure(s).`;
+    
+      document.getElementById("days4-bis").value = '';
+    }
     
     function convert5() {
       const hours5 = Number(document.getElementById("hours5").value);
@@ -85,7 +100,7 @@ function convert1() {
       }
       
       const totalMonths = hours5 / 730;
-      document.getElementById("result5").textContent = `${hours5} heure(s) équivaut à ${totalMonths} mois.`;
+      document.getElementById("result5").textContent = `${hours5} heure(s) correspond(ent) à ${totalMonths} mois.`;
 
       document.getElementById("hours5").value = '';
     }
@@ -99,7 +114,7 @@ function convert1() {
       }
       
       const totalMonths2 = hours6 / 176;
-      document.getElementById("result6").textContent = `${hours6} heure(s) équivaut à ${totalMonths2} mois.`;
+      document.getElementById("result6").textContent = `${hours6} heure(s) correspond(ent) à ${totalMonths2} mois.`;
 
       document.getElementById("hours6").value = '';
     }
