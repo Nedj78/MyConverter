@@ -8,18 +8,18 @@
     }
     
   html, body {
-      margin: 0; /* Supprime toute marge par défaut */
-      padding: 0; /* Supprime tout padding par défaut */
-      width: 100%; /* Assurer que le body prend toute la largeur de l'écran */
-      height: 100%; /* Prendre toute la hauteur de l'écran */
-      box-sizing: border-box; /* Assurer que le padding est inclus dans la largeur totale */
+      margin: 0; 
+      padding: 0; 
+      width: 100%; 
+      height: 100%; 
+      box-sizing: border-box; 
     }
 
   #main-content {
-      margin: 0 auto; /* Centrer le contenu */
-      padding: 20px; /* Un peu de marge interne */
-      width: 100%; /* Prendre toute la largeur disponible */
-      box-sizing: border-box; /* Inclure le padding dans la largeur */
+      margin: 0 auto; 
+      padding: 20px; 
+      width: 100%; 
+      box-sizing: border-box; 
   }
 
   h1 {
@@ -129,10 +129,10 @@
   }
 
   .scratch-pad p {
-    font-size: 14px;
+    font-size: 18px;
     margin: 15px 0 0 0;
     float: left;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+    font-family: Gloria Hallelujah, Cochin, Georgia, Times, 'Times New Roman', serif;  
   }
 
   .external-link {
