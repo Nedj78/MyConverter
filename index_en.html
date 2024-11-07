@@ -9,95 +9,95 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/calculator-img.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="style.css">
-    <title>Time converter</title>
+    <title>Time Converter</title>
   </head>
   <body>
     <section id="main-content">
       <h1>Hours → Minutes</h1>
-      <label for="hours">Hours:</label> 
+      <label for="hours1">Hours:</label>
       <input type="number" id="hours1" min="0">
-      <label for="minutes">Minutes:</label>
+      <label for="minutes1">Minutes:</label>
       <input type="number" id="minutes1" min="0" max="59">
-      <button class="button" id="convertBtn" onclick="convert1()">Convert</button>
+      <button class="button" id="convertBtn">Convert</button>
       <p id="result1"></p>
 
       <h1>Minutes → Hours</h1>
       <label for="minutes2">Minutes:</label>
       <input type="number" id="minutes2" min="0">
-      <button class="button" onclick="convert2()">Convert</button>
+      <button class="button" id="convertBtn2">Convert</button>
       <p id="result2"></p>
 
       <h1>Hours → Days</h1>
       <label for="hours3">Hours:</label>
       <input type="number" id="hours3" min="0">
-      <button class="button" onclick="convert3()">Convert</button>
+      <button class="button" id="convertBtn3">Convert</button>
       <p id="result3"></p>
 
-      <h1>Hours → Business days</h1>
+      <h1>Hours → Business Days</h1>
       <label for="hours3-bis">Hours:</label>
       <input type="number" id="hours3-bis" min="0">
-      <button class="button" onclick="convert3Workdays()">Convertir</button>
+      <button class="button" id="convertBtnWorkdays">Convert</button>
       <p id="result3WorkingDays"></p>
 
       <h1>Days → Hours</h1>
       <label for="days4">Days:</label>
       <input type="number" id="days4" min="0">
-      <button class="button" onclick="convert4()">Convert</button>
+      <button class="button" id="convertBtn4">Convert</button>
       <p id="result4"></p>
 
-      <h1>Business days → Hours</h1>
+      <h1>Business Days → Hours</h1>
       <label for="days4-bis">Days:</label>
       <input type="number" id="days4-bis" min="0">
-      <button class="button" onclick="convert4WorkDays()">Convert</button>
+      <button class="button" id="convertBtn4WorkDays">Convert</button>
       <p id="result4WorkDays"></p>
 
       <h1>Hours → Months <span>(per 30 days)</span></h1>
       <label for="hours5">Hours:</label>
       <input type="number" id="hours5" min="0">
-      <button class="button" onclick="convert5()">Convert</button>
+      <button class="button" id="convertBtn5">Convert</button>
       <p id="result5"></p>
 
-      <h1>Hours → Months <span>(per 22 business days)</h1>
-        <label for="hours6">Hours:</label>
-        <input type="number" id="hours6" min="0">
-        <button class="button" onclick="convert6()">Convert</button>
-        <p id="result6"></p>
+      <h1>Hours → Months <span>(per 22 business days)</span></h1>
+      <label for="hours6">Hours:</label>
+      <input type="number" id="hours6" min="0">
+      <button class="button" id="convertBtn6">Convert</button>
+      <p id="result6"></p>
 
       <h1>Calculator</h1>
-      <div class="calculator">
-        <div class="display"></div>
-        <div class="button-row">
-          <button class="buttoncalculator" onclick="clearDisplay()">C</button>
-          <button class="buttoncalculator" onclick="backspace()" style="font-weight: bold;">⌦</button>
-          <button class="buttoncalculator" onclick="appendToDisplay('(')">(</button>
-          <button class="buttoncalculator" onclick="appendToDisplay(')')">)</button>
-          <button class="buttoncalculator operator" onclick="appendToDisplay('/')">&divide;</button>
-          <button class="buttoncalculator operator" onclick="appendToDisplay('*')">&times;</button>
+            <div class="calculator">
+            <div class="display"></div>
+            <div class="button-row">
+                <button class="buttoncalculator" onclick="clearDisplay()">C</button>
+                <button class="buttoncalculator" onclick="backspace()" style="font-weight: bold;">⌦</button>
+                <button class="buttoncalculator" onclick="appendToDisplay('(')">(</button>
+                <button class="buttoncalculator" onclick="appendToDisplay(')')">)</button>
+                <button class="buttoncalculator operator" onclick="appendToDisplay('/')">&divide;</button>
+                <button class="buttoncalculator operator" onclick="appendToDisplay('*')">&times;</button>
+            </div>
+            <div class="button-row">
+                <button class="buttoncalculator" onclick="appendToDisplay('7')">7</button>
+                <button class="buttoncalculator" onclick="appendToDisplay('8')">8</button>
+                <button class="buttoncalculator" onclick="appendToDisplay('9')">9</button>
+                <button class="buttoncalculator operator" onclick="appendToDisplay('-')">&minus;</button>
+            </div>
+            <div class="button-row">
+                <button class="buttoncalculator" onclick="appendToDisplay('4')">4</button>
+                <button class="buttoncalculator" onclick="appendToDisplay('5')">5</button>
+                <button class="buttoncalculator" onclick="appendToDisplay('6')">6</button>
+                <button class="buttoncalculator operator" onclick="appendToDisplay('+')">+</button>
+            </div>
+            <div class="button-row">
+                <button class="buttoncalculator" onclick="appendToDisplay('1')">1</button>
+                <button class="buttoncalculator" onclick="appendToDisplay('2')">2</button>
+                <button class="buttoncalculator" onclick="appendToDisplay('3')">3</button>
+                <button class="buttoncalculator operator" onclick="calculate()">=</button>
+            </div>
+            <div class="button-row">
+                <button class="buttoncalculator zero" onclick="appendToDisplay('0')">0</button>
+                <button class="buttoncalculator" onclick="appendToDisplay('.')">.</button>
+            </div>
+            <div class="scratch-pad"></div>
         </div>
-        <div class="button-row">
-          <button class="buttoncalculator" onclick="appendToDisplay('7')">7</button>
-          <button class="buttoncalculator" onclick="appendToDisplay('8')">8</button>
-          <button class="buttoncalculator" onclick="appendToDisplay('9')">9</button>
-          <button class="buttoncalculator operator" onclick="appendToDisplay('-')">&minus;</button>
-        </div>
-        <div class="button-row">
-          <button class="buttoncalculator" onclick="appendToDisplay('4')">4</button>
-          <button class="buttoncalculator" onclick="appendToDisplay('5')">5</button>
-          <button class="buttoncalculator" onclick="appendToDisplay('6')">6</button>
-          <button class="buttoncalculator operator" onclick="appendToDisplay('+')">+</button>
-        </div>
-        <div class="button-row">
-          <button class="buttoncalculator" onclick="appendToDisplay('1')">1</button>
-          <button class="buttoncalculator" onclick="appendToDisplay('2')">2</button>
-          <button class="buttoncalculator" onclick="appendToDisplay('3')">3</button>
-          <button class="buttoncalculator operator" onclick="calculate()">=</button>
-        </div>
-        <div class="button-row">
-          <button class="buttoncalculator zero" onclick="appendToDisplay('0')">0</button>
-          <button class="buttoncalculator" onclick="appendToDisplay('.')">.</button>
-        </div>
-        <div class="scratch-pad"></div>
-      </div>
     </section>
     <div class="external-link">
       <a href="./index.html">🇫🇷 Version</a>

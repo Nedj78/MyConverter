@@ -67,7 +67,7 @@
     padding: 10px;
     overflow-wrap: break-word;
     min-height: 42px;
-    height: auto; /* hauteur automatique */
+    height: auto; 
   }
 
   .button-row {
@@ -114,7 +114,6 @@
     max-height: 800px;
     min-height: 100px;
     padding: 30px;
-    word-wrap: break-word;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -130,9 +129,30 @@
 
   .scratch-pad p {
     font-size: 18px;
-    margin: 15px 0 0 0;
-    float: left;
-    font-family: Gloria Hallelujah, Cochin, Georgia, Times, 'Times New Roman', serif;  
+    margin: 13px;
+    padding-right: 15px; 
+    text-align: left; 
+    max-width: 100%; 
+    overflow-wrap: break-word; 
+    font-family: Gloria Hallelujah, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .scratch-pad div {
+    height: 2vh; 
+    border-radius: 5px;
+    padding-right: 10px; 
+    box-sizing: border-box;
+  }
+
+  .scratch-pad span {
+    position: relative;
+    margin: -40px 0 0 -23px;
+    bottom: 38px;
+    cursor: pointer;
+  }
+
+  .delete-calcul {
+    color: red;
   }
 
   .external-link {
