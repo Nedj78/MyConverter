@@ -11,5 +11,5 @@ __Project__: converts times and performs calculations.
 __Backend host server__: no
 
 __Frontend host servers__: 
-- [jekyll (Github pages)](https://nedj78.github.io/Myconverter/)
+- [jekyll (Github pages)](https://nedj78.github.io/MyConverter/)
 - [now (Vercel platform)](https://myconvertor.vercel.app/)
