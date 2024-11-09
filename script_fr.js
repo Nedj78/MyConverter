@@ -264,3 +264,15 @@ inputs.forEach(input => {
     }
   });
 });
+
+let lastTap = 0;
+
+document.querySelector('.votre-classe-de-bouton').addEventListener('touchend', function(event) {
+  const currentTime = new Date().getTime();
+  const tapLength = currentTime - lastTap;
+  
+  if (tapLength < 300 && tapLength > 0) {
+    event.preventDefault(); // Prevent the double-tap
+  }
+  lastTap = currentTime;
+});
