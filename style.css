@@ -89,6 +89,7 @@
 
   .buttoncalculator:hover {
     background-color: #eee;
+    cursor: pointer;
   }
 
   .buttoncalculator:active {
@@ -153,6 +154,24 @@
 
   .delete-calcul {
     color: red;
+  }
+
+  .clear-results {
+    background-color: #ccccccad;
+    border: none;
+    border-radius: 5px;
+    color: #222;
+    cursor: pointer;
+    font-size: 14px;
+    flex-grow: 1;
+    margin: 5px;
+    padding: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .clear-results:hover {
+    background-color: #ccc;
+    cursor: pointer;
   }
 
   .external-link {
