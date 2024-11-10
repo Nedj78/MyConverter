@@ -223,11 +223,18 @@ function calculate() {
 
 // Update scratch pad display
 function updateScratchPad() {
-  scratchPadHTML = `
-    <h2>Draft Board</h2>
-    <button class="clear-results" onclick="deleteResults()">Clear all</button>
-    <br><br>`;
-    
+  let scratchPadHTML = '';
+  
+  // Only display the introduction section if scratchPadText has items
+  if (scratchPadText.length > 0) {
+    scratchPadHTML += `
+      <section id="introduction">
+        <h2>Draft Board</h2>
+        <button class="clear-results" onclick="deleteResults()">Clear all</button>
+        <br><br>
+      </section>`;
+  }
+
   scratchPadText.forEach(function(item, index) {
     scratchPadHTML += `
       <br>
@@ -236,6 +243,7 @@ function updateScratchPad() {
         <span class="delete-calcul" data-index="${index}">&#x2718;</span>
       </div>`;
   });
+  
   scratchPad.innerHTML = scratchPadHTML;
 
   // Attach event listeners to each delete button
@@ -256,8 +264,9 @@ function deleteItem(index) {
 // Clear all results in scratch pad
 function deleteResults() {
   scratchPadText = [];
-  updateScratchPad(); 
+  updateScratchPad();
 }
+
 
 // Add keydown event to inputs for conversion
 inputs.forEach(input => {
