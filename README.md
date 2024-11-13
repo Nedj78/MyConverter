@@ -6,7 +6,7 @@ __Responsiveness__: medium and wide screens.
  
 __Framework__: no
  
-__Project__: converts times and performs calculations.
+__Project__: converting times and performing time calculations.
 
 __Backend host server__: no
 
