@@ -12,4 +12,4 @@ __Backend host server__: no
 
 __Frontend host servers__: 
 - [jekyll (Github pages)](https://nedj78.github.io/MyTimeConverter/)
-- [now (Vercel platform)](https://myconvertor.vercel.app/)
+- [now (Vercel platform)](https://my-converter-lfrv3qmxs-nedj78s-projects.vercel.app/)
